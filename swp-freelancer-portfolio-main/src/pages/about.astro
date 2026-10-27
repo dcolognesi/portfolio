@@ -1,0 +1,42 @@
+---
+import PageLayout from '~/layouts/PageLayout.astro';
+import About from '~/components/home/About.astro';
+import Experience from '~/components/home/Experience.astro';
+import Education from '~/components/home/Education.astro';
+import Toolkit from '~/components/home/Toolkit.astro';
+import Process from '~/components/home/Process.astro';
+import Awards from '~/components/home/Awards.astro';
+import Testimonials from '~/components/home/Testimonials.astro';
+import StatsBand from '~/components/home/StatsBand.astro';
+import Cta from '~/components/home/Cta.astro';
+import siteConfig from '~/config/site';
+import { graph, personSchema, breadcrumbSchema } from '~/lib/jsonld';
+
+const jsonLd = graph([
+  personSchema(siteConfig),
+  breadcrumbSchema([
+    { name: 'Home', url: `${siteConfig.url}/` },
+    { name: 'About', url: `${siteConfig.url}/about/` },
+  ]),
+]);
+---
+
+<PageLayout
+  title="About"
+  heading={`Data, search and the decisions in between.`}
+  eyebrow="About"
+  intro={`${siteConfig.author} is a Data Analyst and SEO Specialist based in Milan, turning search, analytics and product data into decisions teams can act on.`}
+  description={`About ${siteConfig.author} — Data Analyst and SEO Specialist based in Milan.`}
+  crumbs={[{ label: 'About' }]}
+  jsonLd={jsonLd}
+>
+  <About headingLevel="h2" id="background" />
+  <Experience />
+  <Education />
+  <StatsBand />
+  <Toolkit />
+  <Process />
+  <Awards />
+  <Testimonials />
+  <Cta />
+</PageLayout>

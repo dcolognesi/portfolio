@@ -1,0 +1,47 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import { education, educationHeading } from '~/data/education';
+---
+
+{
+  education.length > 0 && (
+    <section class="timeline timeline--education" id="education" aria-labelledby="edu-h">
+      <div class="wrap sec">
+        <SectionHeading
+          class="rev"
+          eyebrow={educationHeading.eyebrow}
+          title={educationHeading.title}
+          intro={educationHeading.intro}
+          id="edu-h"
+        />
+
+        <ol class="timeline-list">
+          {education.map((item) => (
+            <li class="timeline-item rev">
+              <div class="timeline-meta">
+                <span class="timeline-period">
+                  {item.start} — {item.end}
+                </span>
+                {item.location && <span class="timeline-loc">{item.location}</span>}
+              </div>
+
+              <div class="timeline-body">
+                <h3>{item.qualification}</h3>
+                <p class="timeline-org">{item.institution}</p>
+                {item.summary && <p>{item.summary}</p>}
+
+                {item.highlights && item.highlights.length > 0 && (
+                  <ul class="timeline-points">
+                    {item.highlights.map((highlight) => (
+                      <li>{highlight}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )
+}
