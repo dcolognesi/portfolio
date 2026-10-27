@@ -1,0 +1,55 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import { experience, experienceHeading } from '~/data/experience';
+---
+
+{
+  experience.length > 0 && (
+    <section class="timeline" id="experience" aria-labelledby="exp-h">
+      <div class="wrap sec">
+        <SectionHeading
+          class="rev"
+          eyebrow={experienceHeading.eyebrow}
+          title={experienceHeading.title}
+          intro={experienceHeading.intro}
+          id="exp-h"
+        />
+
+        <ol class="timeline-list">
+          {experience.map((item) => (
+            <li class="timeline-item rev">
+              <div class="timeline-meta">
+                <span class="timeline-period">
+                  {item.start} — {item.end}
+                </span>
+                {item.location && <span class="timeline-loc">{item.location}</span>}
+              </div>
+
+              <div class="timeline-body">
+                <h3>{item.role}</h3>
+                <p class="timeline-org">{item.company}</p>
+                <p>{item.summary}</p>
+
+                {item.highlights && item.highlights.length > 0 && (
+                  <ul class="timeline-points">
+                    {item.highlights.map((highlight) => (
+                      <li>{highlight}</li>
+                    ))}
+                  </ul>
+                )}
+
+                {item.tags && item.tags.length > 0 && (
+                  <ul class="timeline-tags" aria-label="Skills">
+                    {item.tags.map((tag) => (
+                      <li>{tag}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )
+}
