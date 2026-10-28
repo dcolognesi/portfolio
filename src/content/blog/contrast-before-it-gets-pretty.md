@@ -11,6 +11,7 @@ image:
   alt: An open printed brochure lying on a wooden surface beside a notebook
   width: 800
   height: 550
+draft: true
 ---
 
 The usual sequence is: choose a palette, fall in love with it, build the interface, run an

@@ -37,12 +37,14 @@ const year = new Date().getFullYear();
       </ul>
     </nav>
 
-    <nav aria-labelledby="ftr-services">
-      <h2 id="ftr-services">Services</h2>
-      <ul class="ftr-links">
-        {services.map((s) => <li><a href={`/services/${s.id}/`}>{s.data.title}</a></li>)}
-      </ul>
-    </nav>
+    {services.length > 0 && (
+      <nav aria-labelledby="ftr-services">
+        <h2 id="ftr-services">Services</h2>
+        <ul class="ftr-links">
+          {services.map((s) => <li><a href={`/services/${s.id}/`}>{s.data.title}</a></li>)}
+        </ul>
+      </nav>
+    )}
 
     <div>
       <h2>Get in touch</h2>
@@ -62,7 +64,7 @@ const year = new Date().getFullYear();
   </div>
 
   <div class="wrap ftr-bot">
-    <p>&copy; {year} {siteConfig.copyrightHolder} &mdash; an Astro portfolio theme.</p>
+    <p>&copy; {year} {siteConfig.copyrightHolder} &mdash; data analyst based in Milan, Italy.</p>
     <nav aria-label="Legal">
       {footerNav.legal.map((l) => <a href={l.href}>{l.label}</a>)}
     </nav>

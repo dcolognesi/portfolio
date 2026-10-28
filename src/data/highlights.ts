@@ -9,49 +9,46 @@ export const hero = {
   /** Rendered on two lines. */
   nameLines: ['Dario', 'Colognesi'],
   intro:
-    'I turn search, analytics and product data into decisions teams can act on — from tracking architecture to the dashboard on the wall.',
-  ctaLabel: 'Book a call',
-  ctaHref: '/contact/',
+    'I connect marketing, web and CRM data to build reliable measurement, useful dashboards and automated workflows. My work spans marketing analytics, BI and technical SEO.',
+  ctaLabel: 'View selected projects',
+  ctaHref: '/work/',
+  secondaryLabel: 'View CV',
+  secondaryHref: '#cv',
   photo: {
     src: '/images/colognesi-dario-light.jpeg',
-    alt: 'Dario Colognesi, Data Analyst and SEO Specialist, photographed against a plain studio wall',
+    alt: 'Portrait of Dario Colognesi',
     width: 1280,
     height: 854,
   },
   aside: {
-    roleLine: ['Data Analyst & SEO Specialist', 'Analytics · SEO · Business Intelligence'],
-    title: ['Data', 'Analytics'],
-    /** Small avatar stack — decorative, so the images carry empty alt text. */
-    stack: ['/images/avatar-02.webp', '/images/avatar-01.webp', '/images/avatar-03.webp'],
-    stackBadge: 'GA4',
+    roleLine: ['Data Analyst · Marketing analytics', 'Business Intelligence · SEO / GEO'],
+    title: ['Measurement', '& reporting'],
+    /** Optional avatar stack — left empty because there is no verified team imagery. */
+    stack: [] as string[],
+    stackBadge: '',
     kpi: '11+',
-    kpiLabel: 'years in analytics',
-    note: 'Milano · working across Europe',
+    kpiLabel: 'years across analytics and SEO',
+    note: 'Milan, Italy',
   },
 };
 
 export const collaborate = {
   eyebrow: 'Working together',
-  title: 'Most of my work starts with a number nobody trusts.',
-  body: 'A dashboard that disagrees with the CRM, tracking that lost half the funnel, or a report that takes three days to rebuild. Send me the mess and I will tell you what I would fix first — before there is any question of an invoice. If it is not a fit, I will name someone who is.',
+  title: 'Start with the decision the data needs to support.',
+  body: 'A dashboard that disagrees with the CRM, tracking that lost part of the funnel, or a report that takes days to rebuild. Send the context and the question behind it, and I will suggest a concrete first step.',
   badge: 'Analytics since 2015',
-  ctaLabel: 'Send me the brief',
+  ctaLabel: 'Get in touch',
   ctaHref: '/contact/',
-  /**
-   * The staggered pair beside the copy. Swap these for the bundled SVG
-   * mockups (`BookletMock`, `TabletMock` in src/components/art/) if you would
-   * rather show artwork than photography — see the README.
-   */
   images: [
     {
       src: '/images/collab-team.webp',
-      alt: 'Two colleagues standing in a bright office, reviewing work together on a tablet',
+      alt: 'Two colleagues reviewing work together on a tablet',
       width: 760,
       height: 760,
     },
     {
       src: '/images/collab-meeting.webp',
-      alt: 'Two colleagues talking over an open laptop at a meeting table',
+      alt: 'Two colleagues reviewing a laptop at a meeting table',
       width: 760,
       height: 760,
     },
@@ -60,48 +57,48 @@ export const collaborate = {
 
 export const about = {
   eyebrow: 'Background',
-  title: 'Eleven years of turning messy data into decisions.',
-  body: 'I have built measurement systems inside agencies, in-house teams and as an independent consultant. The pattern is always the same: the dashboard is not the hard part. Agreeing on what a conversion means, where the data comes from and who owns it is. I stay until those questions have an answer the team can defend.',
+  title: 'Measurement built around the decision, not the dashboard.',
+  body: 'Since 2015 I have worked across agencies, in-house teams and freelance engagements. My work sits between marketing, web analytics and CRM: defining KPIs, fixing tracking, building data pipelines and turning the result into reporting people trust.',
   points: [
-    'I start with the decision, then work backwards to the data model.',
-    'Tracking, pipelines and dashboards are documented and handed over, not kept in my head.',
-    'If the metric cannot be trusted, I say so before it reaches a board deck.',
+    'I start with the decision the team needs to make, then work back to the metric and the data model.',
+    'I treat tracking, consent and data quality as part of the deliverable, not an afterthought.',
+    'Definitions, pipelines and dashboards are documented so the team can run them after handover.',
   ],
   image: {
-    src: '/images/about-studio.webp',
-    alt: 'Designers arranging sticky notes and printed layouts across a studio table',
-    width: 900,
-    height: 954,
+    src: '/images/colognesi-dario-light.jpeg',
+    alt: 'Portrait of Dario Colognesi',
+    width: 1280,
+    height: 854,
   },
   badge: {
     value: '11+',
     label: 'Years across analytics, SEO and business intelligence.',
   },
-  ctaLabel: 'See the work',
+  ctaLabel: 'View selected projects',
   ctaHref: '/work/',
 };
 
 export const servicesHeading = {
-  eyebrow: 'Engagements',
-  title: 'Six ways to put me to work.',
-  ctaLabel: 'Ask for a scope',
+  eyebrow: 'Capabilities',
+  title: 'Four areas of work.',
+  ctaLabel: 'Get in touch',
   ctaHref: '/contact/',
 };
 
 export const workHeading = {
-  eyebrow: 'Selected work',
-  title: 'Six projects, six different arguments.',
+  eyebrow: 'Selected projects',
+  title: 'A documented analytics project.',
 };
 
 export const journalHeading = {
-  eyebrow: 'Notebook',
-  title: 'Things I keep having to explain.',
-  ctaLabel: 'Every article',
+  eyebrow: 'Notes',
+  title: 'Working notes on measurement and search.',
+  ctaLabel: 'All notes',
   ctaHref: '/journal/',
 };
 
 export const cta = {
-  title: 'Have you got something that deserves doing properly?',
-  body: 'Tell me what is broken, who it is breaking for, and what happens if it stays that way. That is enough for me to come back with a scope and a number.',
-  primaryLabel: 'Send the brief',
+  title: 'Have a measurement problem worth fixing?',
+  body: 'Share the context, the decision you need to support and any deadline. I will reply with questions and a concrete next step.',
+  primaryLabel: 'Get in touch',
 };

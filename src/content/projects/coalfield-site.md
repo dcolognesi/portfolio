@@ -21,6 +21,7 @@ results:
     label: Lighthouse performance on the templates
 featured: true
 order: 3
+draft: true
 ---
 
 ## Every copy change was a ticket

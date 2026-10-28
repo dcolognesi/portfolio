@@ -3,7 +3,6 @@ import Icon from '../Icon.astro';
 import { cvHeading } from '~/data/cv';
 import { experience, experienceHeading } from '~/data/experience';
 import { education, educationHeading } from '~/data/education';
-import { toolkit, toolkitHeading } from '~/data/toolkit';
 ---
 
 <section class="wrap sec" id="cv" aria-labelledby="cv-h">
@@ -95,34 +94,26 @@ import { toolkit, toolkitHeading } from '~/data/toolkit';
         </ol>
       </section>
 
-      <section class="cv-block" id="cv-skills" aria-labelledby="cv-skills-h">
-        <h3 id="cv-skills-h">{toolkitHeading.title}</h3>
-        <p class="cv-skills-intro">{toolkitHeading.intro}</p>
-        <ul class="cv-skills">
-          {
-            toolkit.map((item) => (
-              <li>
-                <Icon name={item.icon} class="ic-sm" />
-                <span>
-                  <b>{item.title}</b>
-                  <span>{item.detail}</span>
-                </span>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
     </div>
   </details>
 </section>
 
 <script>
   const accordion = document.querySelector<HTMLDetailsElement>('.cv-acc');
-  const hashes = ['#cv', '#experience', '#education', '#cv-skills'];
+  const hashes = ['#cv', '#experience', '#education'];
   const hash = window.location.hash;
+  const openForHash = (value: string) => {
+    if (accordion && hashes.includes(value)) accordion.open = true;
+  };
 
-  if (accordion && hashes.includes(hash)) {
-    accordion.open = true;
+  openForHash(hash);
+  if (accordion?.open) {
     requestAnimationFrame(() => document.querySelector(hash)?.scrollIntoView({ block: 'start' }));
   }
+
+  document.addEventListener('click', (event) => {
+    const link = (event.target as Element | null)?.closest('a');
+    const href = link?.getAttribute('href');
+    if (href?.startsWith('#')) openForHash(href);
+  });
 </script>

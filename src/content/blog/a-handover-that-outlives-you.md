@@ -11,6 +11,7 @@ image:
   alt: Two people reviewing notes and sketches at a studio table
   width: 800
   height: 550
+draft: true
 ---
 
 A launch is a poor test of design work. Everything is fresh, the designer is still

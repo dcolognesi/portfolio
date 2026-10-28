@@ -11,6 +11,7 @@ image:
   alt: A laptop and open notebook on a wooden desk, photographed from above
   width: 800
   height: 550
+draft: true
 ---
 
 Ask a designer for their work and you get the happy path. Ask a support team what users

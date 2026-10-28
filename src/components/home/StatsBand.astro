@@ -9,24 +9,24 @@ import { stats, statsHeading, reel } from '~/data/stats';
       {statsHeading.lead} <span>{statsHeading.tail}</span>
     </h2>
 
-    <div class="band-row">
-      <div class="vid rev rev-d1" id="reel" data-embed={reel.embedUrl || undefined}>
-        <img
-          src={reel.image}
-          alt={reel.alt}
-          width={reel.width}
-          height={reel.height}
-          loading="lazy"
-          decoding="async"
-        />
-        {
-          reel.embedUrl && (
+    <div class:list={['band-row', !reel.image && 'band-row--solo']}>
+      {reel.image && (
+        <div class="vid rev rev-d1" id="reel" data-embed={reel.embedUrl || undefined}>
+          <img
+            src={reel.image}
+            alt={reel.alt}
+            width={reel.width}
+            height={reel.height}
+            loading="lazy"
+            decoding="async"
+          />
+          {reel.embedUrl && (
             <button type="button" aria-label={reel.label}>
               <i><Icon name="play" /></i>
             </button>
-          )
-        }
-      </div>
+          )}
+        </div>
+      )}
 
       <div class="stats rev rev-d2">
         {

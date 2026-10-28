@@ -1,9 +1,10 @@
 ---
 import PageLayout from '~/layouts/PageLayout.astro';
 import About from '~/components/home/About.astro';
+import StatsBand from '~/components/home/StatsBand.astro';
+import Toolkit from '~/components/home/Toolkit.astro';
 import CvAccordion from '~/components/home/CvAccordion.astro';
 import Process from '~/components/home/Process.astro';
-import StatsBand from '~/components/home/StatsBand.astro';
 import Cta from '~/components/home/Cta.astro';
 import siteConfig from '~/config/site';
 import { graph, personSchema, breadcrumbSchema } from '~/lib/jsonld';
@@ -19,16 +20,17 @@ const jsonLd = graph([
 
 <PageLayout
   title="About"
-  heading={`Data, search and the decisions in between.`}
+  heading="Measurement built around the decision."
   eyebrow="About"
-  intro={`${siteConfig.author} is a Data Analyst and SEO Specialist based in Milan, turning search, analytics and product data into decisions teams can act on.`}
-  description={`About ${siteConfig.author} — Data Analyst and SEO Specialist based in Milan.`}
+  intro={`${siteConfig.author} is a data analyst working across marketing analytics, BI, automation and technical SEO. Based in Milan, Italy.`}
+  description={`About ${siteConfig.author} — data analyst working across marketing analytics, BI, automation and technical SEO.`}
   crumbs={[{ label: 'About' }]}
   jsonLd={jsonLd}
 >
   <About headingLevel="h2" id="background" />
-  <CvAccordion />
   <StatsBand />
+  <Toolkit />
+  <CvAccordion />
   <Process />
   <Cta />
 </PageLayout>

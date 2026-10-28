@@ -8,6 +8,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 20px);
 }
 
 body {
@@ -17,7 +18,7 @@ body {
   background: var(--swp-shell);
   color: var(--swp-ink);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.62;
   -webkit-font-smoothing: antialiased;
 }
@@ -102,9 +103,19 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding-right: var(--pad);
 }
 
+[id] { scroll-margin-top: calc(var(--header-h) + 20px); }
+
 .sec { padding-top: var(--sec); padding-bottom: var(--sec); }
 .sec-tight { padding-top: var(--sec-tight); padding-bottom: var(--sec-tight); }
-.sec-top { border-top: 1px solid var(--swp-line); }
+.sec-top { border-top: 0; position: relative; }
+.sec-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--pad);
+  right: var(--pad);
+  border-top: 1px solid var(--swp-line);
+}
 
 /* ============================================================
    Type scale

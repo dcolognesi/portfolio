@@ -4,13 +4,26 @@ import { process, processHeading } from '~/data/process';
 ---
 
 <section class="wrap sec sec-top" id="process" aria-labelledby="proc-h">
-  <SectionHeading
-    class="rev"
-    eyebrow={processHeading.eyebrow}
-    title={processHeading.title}
-    intro={processHeading.intro}
-    id="proc-h"
-  />
+  <div class="proc-head">
+    <SectionHeading
+      class="rev"
+      eyebrow={processHeading.eyebrow}
+      title={processHeading.title}
+      intro={processHeading.intro}
+      id="proc-h"
+    />
+
+    <figure class="proc-media rev rev-d1">
+      <img
+        src="/images/how-i-work.jpeg"
+        alt="Dario Colognesi at work"
+        width="1280"
+        height="853"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+  </div>
 
   <div class="proc">
     {

@@ -12,6 +12,7 @@ image:
   alt: A small team in discussion around a table in a bright office
   width: 800
   height: 550
+draft: true
 ---
 
 Scope creep has a reputation as something that happens in month three. It does not. It

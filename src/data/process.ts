@@ -2,34 +2,34 @@ import type { ProcessStep } from '~/types';
 
 export const process: ProcessStep[] = [
   {
-    stage: 'Stage 01',
-    title: 'Listen',
-    body: 'Two calls with you, four with your customers, plus every support ticket you are willing to share. I come back with the problem in one paragraph and you tell me where I got it wrong.',
-    timing: 'Week 1',
+    stage: 'Phase 01',
+    title: 'Understand the decision',
+    body: 'Clarify the decision the team needs to make, the KPIs that support it and who will use the output. This determines the data model before any dashboard is built.',
+    timing: 'Discovery',
   },
   {
-    stage: 'Stage 02',
-    title: 'Frame',
-    body: 'Structure, flows and the hard trade-offs on paper before anything gets styled. You sign off a skeleton, which costs far less to change than a finished screen.',
-    timing: 'Week 2',
+    stage: 'Phase 02',
+    title: 'Audit data and tracking',
+    body: 'Review the available sources, tracking setup, consent state and CRM or CDP integration. Surface gaps, conflicting definitions and quality issues early.',
+    timing: 'Audit',
   },
   {
-    stage: 'Stage 03',
-    title: 'Draw',
-    body: 'Full-fidelity work with real copy and the ugly states included — loading, empty, error, name-far-too-long. Reviewed live, cameras on, every Thursday.',
-    timing: 'Weeks 3–5',
+    stage: 'Phase 03',
+    title: 'Build the measurement layer',
+    body: 'Implement the tracking, SQL models, pipelines and reporting views needed to answer the question. Add Python automation where manual work would otherwise repeat.',
+    timing: 'Build',
   },
   {
-    stage: 'Stage 04',
-    title: 'Leave well',
-    body: 'Component library, tokens, a written spec and a walkthrough with your engineers. A month of questions answered at no charge afterwards.',
-    timing: 'Week 6',
+    stage: 'Phase 04',
+    title: 'Validate and hand over',
+    body: 'Test the figures, document metric definitions, and walk the team through the model and dashboards. The handover includes what was built and what remains open.',
+    timing: 'Handover',
   },
 ];
 
 export const processHeading = {
-  eyebrow: 'The shape of it',
-  title: 'Four stages, and you see something every Thursday.',
+  eyebrow: 'How I work',
+  title: 'A measurement process that ends with data the team can run.',
   intro:
-    'The order is load-bearing. Each stage hands the next one something it cannot start without, which is how we avoid designing a screen for a decision nobody has made.',
+    'The sequence is deliberate: define the decision, check the data, build the layer, then validate and transfer it. The output should not depend on me being in the room.',
 };

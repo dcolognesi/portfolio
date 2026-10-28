@@ -1,6 +1,6 @@
 ---
 import PageLayout from '~/layouts/PageLayout.astro';
-import ContactForm from '~/components/ContactForm.astro';
+import Button from '~/components/Button.astro';
 import Icon from '~/components/Icon.astro';
 import PhoneReveal from '~/components/PhoneReveal.astro';
 import Faq from '~/components/home/Faq.astro';
@@ -18,18 +18,26 @@ const jsonLd = graph([
 
 <PageLayout
   title="Contact"
-  heading="Tell me what deserves doing properly."
+  heading="Get in touch about analytics, BI or technical SEO."
   eyebrow="Contact"
-  intro="What is broken, who it is breaking for, and what happens if it stays that way. That is enough to come back with a scope and a number."
-  description={`Get in touch with ${siteConfig.author} about art direction, interface design, design systems or a one-week review.`}
+  intro="Share the context, the decision you need to support and any deadline. A short note is enough to start."
+  description={`Contact ${siteConfig.author} about analytics, BI, automation and technical SEO.`}
   crumbs={[{ label: 'Contact' }]}
   jsonLd={jsonLd}
 >
-  <section class="wrap sec" style="padding-top:0" aria-labelledby="form-h">
+  <section class="wrap sec" style="padding-top:0" aria-labelledby="contact-h">
     <div class="contact-grid">
       <div class="rev">
-        <h2 class="d3" id="form-h" style="margin-bottom:24px">Send the brief</h2>
-        <ContactForm />
+        <h2 class="d3" id="contact-h" style="margin-bottom:24px">Start with the question</h2>
+        <p class="lead">
+          Tell me what you need to measure, which systems are involved and what decision the
+          output should support. Email is the quickest route.
+        </p>
+        <div style="margin-top:26px">
+          <Button href={`mailto:${siteConfig.contact.email}`} variant="ink" icon="mail">
+            Email me
+          </Button>
+        </div>
       </div>
 
       <div class="contact-aside rev rev-d1">

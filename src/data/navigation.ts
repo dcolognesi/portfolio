@@ -7,33 +7,31 @@ import type { NavItem } from '~/types';
  * `/`, the link jumps to that section instead of reloading the page.
  */
 export const primaryNav: NavItem[] = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about/', anchor: '#about' },
-  { label: 'CV', href: '/about/#cv', anchor: '#cv' },
-  { label: 'Work', href: '/work/', anchor: '#work' },
-  { label: 'Journal', href: '/journal/', anchor: '#journal' },
+  { label: 'Selected projects', href: '/work/', anchor: '#work' },
+  { label: 'How I work', href: '/#process', anchor: '#process' },
+  { label: 'Capabilities', href: '/#skills', anchor: '#skills' },
+  { label: 'Background', href: '/#about', anchor: '#about' },
+  { label: 'FAQ', href: '/#faq', anchor: '#faq' },
   { label: 'Contact', href: '/contact/' },
 ];
 
 /** Extra links shown only in the mobile drawer. */
 export const mobileExtraNav: NavItem[] = [
-  { label: 'Experience', href: '/about/#experience' },
+  { label: 'About', href: '/about/' },
   { label: 'Education', href: '/about/#education' },
-  { label: 'Skills', href: '/about/#cv-skills' },
-  { label: 'FAQ', href: '/contact/#faq' },
 ];
 
 export const footerNav = {
   explore: [
-    { label: 'About', href: '/about/' },
+    { label: 'Projects', href: '/work/' },
+    { label: 'Skills', href: '/about/#skills' },
+    { label: 'Experience', href: '/about/#experience' },
     { label: 'CV', href: '/about/#cv' },
-    { label: 'Selected work', href: '/work/' },
-    { label: 'Journal', href: '/journal/' },
+    { label: 'About', href: '/about/' },
     { label: 'Contact', href: '/contact/' },
   ] satisfies NavItem[],
   legal: [
     { label: 'Privacy', href: '/privacy/' },
     { label: 'Terms', href: '/terms/' },
-    { label: 'RSS', href: '/rss.xml' },
   ] satisfies NavItem[],
 };

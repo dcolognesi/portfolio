@@ -12,6 +12,7 @@ image:
   alt: An open notebook with blank ruled pages beside a cup of coffee
   width: 800
   height: 550
+draft: true
 ---
 
 Every product demo shows the dashboard full. Forty rows, three charts, a healthy green

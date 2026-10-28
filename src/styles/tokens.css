@@ -20,13 +20,19 @@
   /* Status */
   --swp-live: #3fa34d;
 
+  /* Alternating section surfaces */
+  --surface-a: #fafbf8;
+  --surface-b: #f2f3ef;
+
   /* Typography */
   --font-display: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-body: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   /* Layout */
-  --pad: clamp(20px, calc((100vw - 1320px) / 2), 300px);
+  --content: 1200px;
+  --pad: clamp(20px, calc((100vw - var(--content)) / 2), calc((var(--shell) - var(--content)) / 2));
   --shell: 1920px;
+  --header-h: 72px;
 
   /* Radii */
   --r-sm: 10px;

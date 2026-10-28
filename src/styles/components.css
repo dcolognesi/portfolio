@@ -62,6 +62,10 @@
 .btn-lime > i { background: var(--swp-ink); color: var(--swp-lime); }
 .btn-lime:hover { background: var(--swp-lime-deep); }
 
+.btn-mist { background: var(--swp-mist); color: var(--swp-ink); }
+.btn-mist > i { background: var(--swp-ink); color: var(--swp-mist); }
+.btn-mist:hover { background: var(--swp-line); }
+
 .btn-ink { background: var(--swp-ink); color: #fff; }
 .btn-ink > i { background: var(--swp-lime); color: var(--swp-ink); }
 

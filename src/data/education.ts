@@ -10,7 +10,7 @@ export const education: EducationItem[] = [
   {
     qualification: 'Master in Big Data e Business Intelligence',
     institution: 'Università degli Studi di Milano-Bicocca',
-    location: 'Milano',
+    location: 'Milan, Italy',
     start: '2015',
     end: '2016',
     summary: 'Business Intelligence and Big Data Analytics.',
@@ -18,14 +18,14 @@ export const education: EducationItem[] = [
   {
     qualification: 'Lingue e letterature straniere — Inglese e Spagnolo',
     institution: 'Università degli Studi di Milano',
-    location: 'Milano',
+    location: 'Milan, Italy',
     start: '2005',
     end: '2010',
   },
   {
     qualification: 'Perito in Informatica',
     institution: 'ITIS',
-    location: 'Sesto San Giovanni',
+    location: 'Sesto San Giovanni, Italy',
     start: '1995',
     end: '2000',
     summary: 'Computational Science.',
@@ -33,14 +33,14 @@ export const education: EducationItem[] = [
   {
     qualification: 'Corso di Text Mining',
     institution: 'Università degli Studi di Milano-Bicocca',
-    location: 'Milano',
+    location: 'Milan, Italy',
     start: '2017',
     end: '2017',
   },
   {
     qualification: 'Data Mining — Clustering and Association',
     institution: 'Università degli Studi di Milano-Bicocca',
-    location: 'Milano',
+    location: 'Milan, Italy',
     start: '2017',
     end: '2017',
   },

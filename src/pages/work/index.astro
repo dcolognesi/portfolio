@@ -18,33 +18,33 @@ const jsonLd = graph([
   personSchema(siteConfig),
   breadcrumbSchema([
     { name: 'Home', url: `${siteConfig.url}/` },
-    { name: 'Work', url: `${siteConfig.url}/work/` },
+    { name: 'Projects', url: `${siteConfig.url}/work/` },
   ]),
 ]);
 ---
 
 <PageLayout
-  title="Work"
-  heading="Six projects, six different arguments."
-  eyebrow="Selected work"
-  intro="Each of these started as a half-finished thing somebody was quietly worried about. The case studies say what was wrong, what changed, and what I would do differently."
-  description="Selected case studies in art direction, interface design, identity and design systems."
-  crumbs={[{ label: 'Work' }]}
+  title="Projects"
+  heading="Selected projects."
+  eyebrow="Work"
+  intro="A small selection of documented work. The current case study is a portfolio demo built with synthetic data and labelled as such."
+  description="Selected analytics and SEO projects by Dario Colognesi."
+  crumbs={[{ label: 'Projects' }]}
   jsonLd={jsonLd}
 >
   <section class="wrap sec" style="padding-top:0" aria-labelledby="work-list-h">
     <h2 class="sr-only" id="work-list-h">All projects</h2>
 
-    <div class="work-filters rev" role="group" aria-label="Filter projects by discipline" id="workFilters">
-      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
-      {
-        categories.map((category) => (
+    {categories.length > 1 && (
+      <div class="work-filters rev" role="group" aria-label="Filter projects by discipline" id="workFilters">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+        {categories.map((category) => (
           <button class="chip" type="button" data-filter={category} aria-pressed="false">
             {category}
           </button>
-        ))
-      }
-    </div>
+        ))}
+      </div>
+    )}
 
     <p class="sr-only" role="status" id="workCount"></p>
 
@@ -60,7 +60,7 @@ const jsonLd = graph([
       }
     </div>
 
-    {projects.length === 0 && <p class="empty">No projects yet. Add one in <code>src/content/projects/</code>.</p>}
+    {projects.length === 0 && <p class="empty">No projects are published yet.</p>}
   </section>
 
   <Cta />

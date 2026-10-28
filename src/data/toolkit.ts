@@ -1,19 +1,39 @@
 import type { ToolkitItem } from '~/types';
 
+/**
+ * Four areas of work supported by the CV. Tools are examples, not a complete
+ * inventory, and are not repeated in every card.
+ */
 export const toolkit: ToolkitItem[] = [
-  { icon: 'chart', title: 'Data analytics', detail: 'GA4, Adobe Analytics and the questions behind the numbers.' },
-  { icon: 'code', title: 'SQL & Python', detail: 'CTEs, window functions, query tuning and automated audits.' },
-  { icon: 'layers', title: 'Data pipelines', detail: 'ELT, BigQuery, Snowflake and a governed source of truth.' },
-  { icon: 'grid', title: 'BI dashboards', detail: 'Power BI, Looker Studio and Tableau built for decisions.' },
-  { icon: 'flag', title: 'Tracking & consent', detail: 'GTM client/server-side, data quality and GDPR compliance.' },
-  { icon: 'spark', title: 'SEO & GEO', detail: 'Technical audits, AEO/GEO monitoring and organic strategy.' },
-  { icon: 'device', title: 'CRM & CDP', detail: 'HubSpot, Salesforce and attribution across the journey.' },
-  { icon: 'type', title: 'Data storytelling', detail: 'KPI frameworks and executive reporting that gets used.' },
+  {
+    icon: 'chart',
+    title: 'Analytics & measurement',
+    detail:
+      'Measurement plans, GA4 and Adobe Analytics tracking, KPI definitions, consent and data quality.',
+  },
+  {
+    icon: 'grid',
+    title: 'BI & reporting',
+    detail:
+      'Data models and dashboards in Power BI, Looker Studio and Tableau, built around a decision rather than a chart count.',
+  },
+  {
+    icon: 'layers',
+    title: 'Automation & data integration',
+    detail:
+      'SQL and Python workflows, ELT pipelines in BigQuery and Snowflake, plus CRM and CDP integrations across Salesforce and HubSpot.',
+  },
+  {
+    icon: 'spark',
+    title: 'Technical SEO & GEO',
+    detail:
+      'Technical audits, crawling, site migrations, AEO/GEO monitoring and organic visibility analysis.',
+  },
 ];
 
 export const toolkitHeading = {
-  eyebrow: 'Toolkit',
-  title: 'The stack behind the decisions.',
+  eyebrow: 'Capabilities',
+  title: 'Four areas I work across.',
   intro:
-    'Analytics, engineering and search working as one measurement layer — documented, governed and handed over so the team can run it without me.',
+    'Measurement, reporting, automation and search. The tools change; the goal is the same: data a team can trust, understand and use.',
 };

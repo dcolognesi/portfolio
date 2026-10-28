@@ -21,6 +21,7 @@ results:
     label: Spot colour across the whole range
 featured: true
 order: 5
+draft: true
 ---
 
 ## A range that had not been designed as a range

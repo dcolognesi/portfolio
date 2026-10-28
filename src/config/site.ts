@@ -21,12 +21,12 @@ export const siteConfig: SiteConfig = {
   },
 
   author: 'Dario Colognesi',
-  role: 'Data Analyst & SEO Specialist',
-  title: 'Dario Colognesi — Data Analyst & SEO Specialist',
+  role: 'Data Analyst · Marketing Analytics & Automation',
+  title: 'Dario Colognesi — Data Analyst, Marketing Analytics & Automation',
   description:
-    'Portfolio of Dario Colognesi, a Data Analyst and SEO Specialist based in Milan working on analytics, search performance and data-driven growth.',
+    'Portfolio of Dario Colognesi, a data analyst working across marketing analytics, BI, automation and technical SEO. Based in Milan, Italy.',
   url: import.meta.env.SITE ?? 'https://swp-freelancer-portfolio.vercel.app',
-  ogImage: '/og-default.png',
+  ogImage: '/images/colognesi-dario-light.jpeg',
   locale: 'en',
   themeColor: '#c8f14d',
 
@@ -34,8 +34,8 @@ export const siteConfig: SiteConfig = {
     email: 'oceanmarketingitalia@gmail.com',
     phone: '+39 371 187 0703',
     phoneHref: '+393711870703',
-    location: 'Milano, Italia',
-    availability: 'Available for analytics & SEO consulting',
+    location: 'Milan, Italy',
+    availability: 'Open to analytics, BI and technical SEO opportunities',
     // Paste a Formspree / Web3Forms / Netlify endpoint here to make the
     // contact form live. See "Contact form" in the README.
     formEndpoint: '',
@@ -47,7 +47,7 @@ export const siteConfig: SiteConfig = {
   ],
 
   about:
-    'Data Analyst & SEO Specialist based in Milan. I turn search, analytics and product data into decisions teams can act on.',
+    'Data analyst working across marketing analytics, BI, automation and technical SEO. I build measurement systems that teams can trust and use.',
 
   copyrightHolder: 'Dario Colognesi',
 };

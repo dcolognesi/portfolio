@@ -12,6 +12,7 @@ image:
   alt: A laptop, notebook and espresso cup on a wooden table seen from above
   width: 800
   height: 550
+draft: true
 ---
 
 There is a moment in every design system's life when the brand changes and somebody has

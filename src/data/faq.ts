@@ -2,41 +2,41 @@ import type { FaqItem } from '~/types';
 
 export const faq: FaqItem[] = [
   {
-    question: 'How long does a project usually take?',
+    question: 'What kind of analytics work do you take on?',
     answer:
-      'A full product engagement runs six weeks end to end. An identity is three to four. A second opinion is one week. If your deadline is tighter than that, say so early and you will get an honest answer about whether it fits.',
+      'Measurement plans, tracking architecture, data quality, SQL and Python workflows, BI dashboards, CRM and CDP integration, and technical SEO or GEO analysis. The common thread is making marketing and customer data usable for a decision.',
   },
   {
-    question: 'Is the price fixed?',
+    question: 'Which tools do you work with?',
     answer:
-      'Yes, wherever the scope is defined. One number, one payment schedule and a written list of what sits inside it. Anything outside becomes a conversation before work starts, never a surprise line on an invoice.',
+      'GA4, Adobe Analytics, Google Tag Manager, SQL, Python, BigQuery, Snowflake, Power BI, Looker Studio, Tableau, Salesforce and HubSpot. I choose the tool around the existing stack, not the other way round.',
   },
   {
-    question: 'Can you work alongside our engineers?',
+    question: 'Can you work with our existing tracking and CRM?',
     answer:
-      'That is the normal arrangement. I join your stand-ups, write specs in whatever format your team already uses, and stay reachable for a month after handover so questions get answered rather than guessed at.',
+      'Yes. I have configured client- and server-side tracking, connected web analytics with CDP and CRM systems, and worked with Salesforce and HubSpot data. I start by checking what is already collected and what can be trusted.',
   },
   {
-    question: 'What lands in my hands at the end?',
+    question: 'Do you cover SEO as well as analytics?',
     answer:
-      'Source files, a component library with every state documented, a token sheet, exported assets and a written spec covering behaviour and edge cases. Build engagements also include the front-end templates and a configured theme.',
+      'Yes. My background includes technical SEO, enterprise SEO strategy, AEO/GEO analysis, crawling and site migrations. SEO work is supported by the same measurement and data-quality approach as the analytics work.',
   },
   {
-    question: 'Do you take small pieces of work?',
+    question: 'What does an engagement produce?',
     answer:
-      'Sometimes. A single landing page, a pricing rewrite or a one-week review all fit comfortably. Anything larger tends to work better as a short sprint than as hours scattered across a quarter.',
+      'Depending on the scope: a measurement plan, tracking implementation, SQL models, data pipelines, dashboards, automated checks or a technical audit. Definitions and documentation are part of the output, so the team can maintain it after handover.',
   },
   {
-    question: 'Who owns the work at the end?',
+    question: 'How should I get in touch?',
     answer:
-      'You do, completely, once the final payment clears. Files transfer into your accounts rather than living in mine. I only ask permission to show the work publicly, and I will keep it private if you would rather.',
+      'Send a short note with the context, the decision you need to support and any deadline. You do not need a complete brief to start the conversation.',
   },
 ];
 
 export const faqHeading = {
   eyebrow: 'FAQ',
-  title: 'Asked before nearly every project.',
-  asideTitle: 'Not sure yet?',
+  title: 'Common questions about the work.',
+  asideTitle: 'Have a specific question?',
   asideBody:
-    'Send a paragraph about what is going wrong. If I am not right for it I will say so and name someone who is, usually the same day.',
+    'Send the context and the decision you need to support. I will reply with questions and a suggested next step.',
 };
