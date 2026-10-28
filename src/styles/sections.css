@@ -352,6 +352,10 @@
 /* ============================================================
    4. Collaborate
    ============================================================ */
+.collab-sec {
+  padding-top: clamp(32px, 3.6vw, 56px);
+  padding-bottom: 0;
+}
 .collab-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr);
@@ -469,9 +473,9 @@
   text-align: center;
   max-width: 75%;
   margin: 0 auto clamp(38px, 4.6vw, 66px);
-  font-size: clamp(24px, 3.2vw, 40px);
-  line-height: 1.18;
-  letter-spacing: -0.022em;
+  font-size: clamp(30px, 4.6vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -0.032em;
   font-weight: 600;
 }
 .band-h span { display: block; color: rgba(255, 255, 255, 0.45); }
@@ -718,7 +722,9 @@
 #proc-h,
 #about-h,
 #faq-h,
-#cta-h {
+#cta-h,
+#collab-h,
+#band-h {
   font-size: clamp(26px, 3.9vw, 48px);
   line-height: 1.06;
   letter-spacing: -0.03em;
@@ -739,8 +745,8 @@
 .home #work { background: var(--surface-a); }
 .home #cv { background: var(--surface-a); }
 .home #process { background: var(--surface-b); }
-.home #about { background: var(--surface-a); }
-.home #faq { background: var(--surface-b); }
+.home #about { background: var(--surface-b); }
+.home #faq { background: var(--surface-a); }
 .home #contact { background: var(--surface-a); }
 .home #process::before,
 .home #faq::before { display: none; }

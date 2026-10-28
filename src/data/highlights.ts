@@ -5,7 +5,6 @@
  */
 
 export const hero = {
-  greeting: 'Hello, my name is',
   /** Rendered on two lines. */
   nameLines: ['Dario', 'Colognesi'],
   intro:
@@ -34,21 +33,21 @@ export const hero = {
 
 export const collaborate = {
   eyebrow: 'Working together',
-  title: 'Start with the decision the data needs to support.',
-  body: 'A dashboard that disagrees with the CRM, tracking that lost part of the funnel, or a report that takes days to rebuild. Send the context and the question behind it, and I will suggest a concrete first step.',
+  title: 'Most of my work starts with a number nobody trusts.',
+  body: 'A dashboard that disagrees with the CRM, tracking that lost half the funnel, or a report that takes three days to rebuild. Send me the mess and I will tell you what I would fix first — before there is any question of an invoice. If it is not a fit, I will name someone who is.',
   badge: 'Analytics since 2015',
-  ctaLabel: 'Get in touch',
+  ctaLabel: 'Send me the brief',
   ctaHref: '/contact/',
   images: [
     {
       src: '/images/collab-team.webp',
-      alt: 'Two colleagues reviewing work together on a tablet',
+      alt: 'Two colleagues standing in a bright office, reviewing work together on a tablet',
       width: 760,
       height: 760,
     },
     {
       src: '/images/collab-meeting.webp',
-      alt: 'Two colleagues reviewing a laptop at a meeting table',
+      alt: 'Two colleagues talking over an open laptop at a meeting table',
       width: 760,
       height: 760,
     },
@@ -57,24 +56,24 @@ export const collaborate = {
 
 export const about = {
   eyebrow: 'Background',
-  title: 'Measurement built around the decision, not the dashboard.',
-  body: 'Since 2015 I have worked across agencies, in-house teams and freelance engagements. My work sits between marketing, web analytics and CRM: defining KPIs, fixing tracking, building data pipelines and turning the result into reporting people trust.',
+  title: '11 years of turning messy data into decisions.',
+  body: 'I have built measurement systems inside agencies, in-house teams and as an independent consultant. The pattern is always the same: the dashboard is not the hard part. Agreeing on what a conversion means, where the data comes from and who owns it is. I stay until those questions have an answer the team can defend.',
   points: [
-    'I start with the decision the team needs to make, then work back to the metric and the data model.',
-    'I treat tracking, consent and data quality as part of the deliverable, not an afterthought.',
-    'Definitions, pipelines and dashboards are documented so the team can run them after handover.',
+    'I start with the decision, then work backwards to the data model.',
+    'Tracking, pipelines and dashboards are documented and handed over, not kept in my head.',
+    'If the metric cannot be trusted, I say so before it reaches a board deck.',
   ],
   image: {
-    src: '/images/colognesi-dario-light.jpeg',
-    alt: 'Portrait of Dario Colognesi',
-    width: 1280,
-    height: 854,
+    src: '/images/about-studio.webp',
+    alt: 'Designers arranging sticky notes and printed layouts across a studio table',
+    width: 900,
+    height: 954,
   },
   badge: {
     value: '11+',
     label: 'Years across analytics, SEO and business intelligence.',
   },
-  ctaLabel: 'View selected projects',
+  ctaLabel: 'See the work',
   ctaHref: '/work/',
 };
 
