@@ -1,12 +1,8 @@
 ---
 import PageLayout from '~/layouts/PageLayout.astro';
 import About from '~/components/home/About.astro';
-import Experience from '~/components/home/Experience.astro';
-import Education from '~/components/home/Education.astro';
-import Toolkit from '~/components/home/Toolkit.astro';
+import CvAccordion from '~/components/home/CvAccordion.astro';
 import Process from '~/components/home/Process.astro';
-import Awards from '~/components/home/Awards.astro';
-import Testimonials from '~/components/home/Testimonials.astro';
 import StatsBand from '~/components/home/StatsBand.astro';
 import Cta from '~/components/home/Cta.astro';
 import siteConfig from '~/config/site';
@@ -31,12 +27,8 @@ const jsonLd = graph([
   jsonLd={jsonLd}
 >
   <About headingLevel="h2" id="background" />
-  <Experience />
-  <Education />
+  <CvAccordion />
   <StatsBand />
-  <Toolkit />
   <Process />
-  <Awards />
-  <Testimonials />
   <Cta />
 </PageLayout>

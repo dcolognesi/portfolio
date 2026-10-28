@@ -31,7 +31,7 @@ export const siteConfig: SiteConfig = {
   themeColor: '#c8f14d',
 
   contact: {
-    email: 'dario.colognesi@gmail.com',
+    email: 'oceanmarketingitalia@gmail.com',
     phone: '+39 371 187 0703',
     phoneHref: '+393711870703',
     location: 'Milano, Italia',

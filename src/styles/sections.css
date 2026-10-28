@@ -27,9 +27,17 @@
    `width`/`height` on the <img> hold the ratio; the CSS sets the size. */
 .brand { display: inline-flex; align-items: center; flex: none; }
 .brand img { height: 38px; width: auto; }
+.brand-text {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: var(--swp-ink);
+}
 
 @media (max-width: 480px) {
   .brand img { height: 32px; }
+  .brand-text { font-size: 17px; }
 }
 
 .nav { display: flex; align-items: center; gap: clamp(14px, 1.9vw, 30px); }
@@ -163,12 +171,10 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: var(--swp-lime);
   display: grid;
   place-items: center;
-  color: var(--swp-graphite);
+  color: var(--swp-ink);
   transition: background 0.28s var(--ease), color 0.28s var(--ease), transform 0.28s var(--ease);
 }
 .hero-social a:hover { background: var(--swp-ink); color: var(--swp-lime); transform: translateY(-2px); }
@@ -430,7 +436,18 @@
 /* ============================================================
    5. Dark stats band
    ============================================================ */
-.band { background: var(--swp-graphite); color: #fff; }
+.band {
+  background: transparent;
+  color: #fff;
+  padding-inline: var(--pad);
+}
+.band > .wrap {
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 3.2vw, 56px);
+  background: var(--swp-graphite);
+  border-radius: var(--r-lg);
+}
 .band .muted { color: rgba(255, 255, 255, 0.6); }
 .band-h {
   text-align: center;
@@ -1046,6 +1063,13 @@
 }
 .ftr-brand { display: inline-flex; align-items: center; margin-bottom: 18px; }
 .ftr-brand img { height: 46px; width: auto; }
+.ftr-brand-text {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: #fff;
+}
 .ftr-about {
   font-size: 14.6px;
   color: rgba(255, 255, 255, 0.58);
@@ -1102,3 +1126,107 @@
 
 @media (max-width: 900px) { .ftr-top { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .ftr-top { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   14. CV accordion
+   ============================================================ */
+.cv-head {
+  max-width: 780px;
+  margin-bottom: clamp(26px, 3vw, 42px);
+}
+.cv-head .lead { max-width: 62ch; margin-top: 14px; }
+.cv-acc {
+  border: 1.5px solid var(--swp-line);
+  border-radius: var(--r-lg);
+  background: #fff;
+  overflow: hidden;
+}
+.cv-toggle {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: clamp(18px, 2.2vw, 24px) clamp(20px, 3vw, 32px);
+  background: var(--swp-lime);
+  color: var(--swp-ink);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: clamp(17px, 1.8vw, 22px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  transition: background 0.25s var(--ease);
+}
+.cv-toggle:hover { background: var(--swp-lime-deep); }
+.cv-toggle::-webkit-details-marker { display: none; }
+.cv-toggle-open { flex: 1; }
+.cv-toggle-close { display: none; flex: 1; }
+.cv-acc[open] .cv-toggle-open { display: none; }
+.cv-acc[open] .cv-toggle-close { display: block; }
+.cv-toggle-ic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--swp-ink);
+  color: var(--swp-lime);
+  display: grid;
+  place-items: center;
+  flex: none;
+  transition: transform 0.3s var(--ease);
+}
+.cv-acc[open] .cv-toggle-ic { transform: rotate(45deg); }
+.cv-body {
+  padding: clamp(24px, 3.4vw, 48px);
+  display: grid;
+  gap: clamp(36px, 4.5vw, 64px);
+}
+.cv-block h3 {
+  font-size: clamp(24px, 2.6vw, 36px);
+  letter-spacing: -0.028em;
+  margin-bottom: 18px;
+}
+.cv-block .timeline-list { border-top: 1px solid var(--swp-line); }
+.cv-block .timeline-body h4 {
+  font-size: clamp(20px, 2.1vw, 28px);
+  letter-spacing: -0.026em;
+}
+.cv-skills-intro {
+  font-size: 15px;
+  color: var(--swp-slate);
+  max-width: 62ch;
+  margin: 8px 0 22px;
+}
+.cv-skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.cv-skills li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  background: var(--swp-mist);
+  border-radius: var(--r-md);
+}
+.cv-skills li > svg { color: var(--swp-graphite); flex: none; margin-top: 2px; }
+.cv-skills b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.cv-skills li span span {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--swp-slate);
+}
+
+@media (max-width: 700px) {
+  .cv-toggle { font-size: 16px; }
+  .cv-body { padding: 20px; }
+}

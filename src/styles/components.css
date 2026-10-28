@@ -186,3 +186,29 @@
 .crumbs li { display: inline-flex; align-items: center; gap: 8px; }
 .crumbs li + li::before { content: '/'; color: var(--swp-line); }
 .crumbs [aria-current='page'] { color: var(--swp-ink); font-weight: 500; }
+
+/* ---- Phone reveal ----------------------------------------- */
+.phone-reveal:not(.btn) {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.phone-reveal:not(.btn):hover { color: var(--swp-ink); }
+.phone-reveal-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.contact-card .phone-reveal {
+  font-size: 14px;
+  color: var(--swp-slate);
+  line-height: 1.55;
+}
+.ftr-cbox .phone-reveal:hover { color: var(--swp-lime); }

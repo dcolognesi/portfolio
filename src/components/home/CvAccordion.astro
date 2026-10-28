@@ -1,0 +1,128 @@
+---
+import Icon from '../Icon.astro';
+import { cvHeading } from '~/data/cv';
+import { experience, experienceHeading } from '~/data/experience';
+import { education, educationHeading } from '~/data/education';
+import { toolkit, toolkitHeading } from '~/data/toolkit';
+---
+
+<section class="wrap sec" id="cv" aria-labelledby="cv-h">
+  <div class="cv-head rev">
+    <p class="eyebrow">{cvHeading.eyebrow}</p>
+    <h2 class="d2" id="cv-h">{cvHeading.title}</h2>
+    <p class="lead">{cvHeading.intro}</p>
+  </div>
+
+  <details class="cv-acc rev">
+    <summary class="cv-toggle">
+      <span class="cv-toggle-open">Open the full CV</span>
+      <span class="cv-toggle-close">Close the CV</span>
+      <span class="cv-toggle-ic" aria-hidden="true">
+        <Icon name="plus" class="ic-sm" />
+      </span>
+    </summary>
+
+    <div class="cv-body">
+      <section class="cv-block" id="experience" aria-labelledby="cv-exp">
+        <h3 id="cv-exp">{experienceHeading.title}</h3>
+        <ol class="timeline-list">
+          {
+            experience.map((item) => (
+              <li class="timeline-item">
+                <div class="timeline-meta">
+                  <span class="timeline-period">
+                    {item.start} — {item.end}
+                  </span>
+                  {item.location && <span class="timeline-loc">{item.location}</span>}
+                </div>
+
+                <div class="timeline-body">
+                  <h4>{item.role}</h4>
+                  <p class="timeline-org">{item.company}</p>
+                  <p>{item.summary}</p>
+
+                  {item.highlights && item.highlights.length > 0 && (
+                    <ul class="timeline-points">
+                      {item.highlights.map((highlight) => (
+                        <li>{highlight}</li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {item.tags && item.tags.length > 0 && (
+                    <ul class="timeline-tags" aria-label="Skills">
+                      {item.tags.map((tag) => (
+                        <li>{tag}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <section class="cv-block" id="education" aria-labelledby="cv-edu">
+        <h3 id="cv-edu">{educationHeading.title}</h3>
+        <ol class="timeline-list">
+          {
+            education.map((item) => (
+              <li class="timeline-item">
+                <div class="timeline-meta">
+                  <span class="timeline-period">
+                    {item.start} — {item.end}
+                  </span>
+                  {item.location && <span class="timeline-loc">{item.location}</span>}
+                </div>
+
+                <div class="timeline-body">
+                  <h4>{item.qualification}</h4>
+                  <p class="timeline-org">{item.institution}</p>
+                  {item.summary && <p>{item.summary}</p>}
+
+                  {item.highlights && item.highlights.length > 0 && (
+                    <ul class="timeline-points">
+                      {item.highlights.map((highlight) => (
+                        <li>{highlight}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <section class="cv-block" id="cv-skills" aria-labelledby="cv-skills-h">
+        <h3 id="cv-skills-h">{toolkitHeading.title}</h3>
+        <p class="cv-skills-intro">{toolkitHeading.intro}</p>
+        <ul class="cv-skills">
+          {
+            toolkit.map((item) => (
+              <li>
+                <Icon name={item.icon} class="ic-sm" />
+                <span>
+                  <b>{item.title}</b>
+                  <span>{item.detail}</span>
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+  </details>
+</section>
+
+<script>
+  const accordion = document.querySelector<HTMLDetailsElement>('.cv-acc');
+  const hashes = ['#cv', '#experience', '#education', '#cv-skills'];
+  const hash = window.location.hash;
+
+  if (accordion && hashes.includes(hash)) {
+    accordion.open = true;
+    requestAnimationFrame(() => document.querySelector(hash)?.scrollIntoView({ block: 'start' }));
+  }
+</script>

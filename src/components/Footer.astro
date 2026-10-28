@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import PhoneReveal from './PhoneReveal.astro';
 import siteConfig from '~/config/site';
 import { footerNav } from '~/data/navigation';
 import { getCollection } from 'astro:content';
@@ -16,16 +17,7 @@ const year = new Date().getFullYear();
 <footer class="ftr">
   <div class="wrap ftr-top">
     <div>
-      <a class="ftr-brand" href="/">
-        <img
-          src={siteConfig.logo.footer.src}
-          alt={`${siteConfig.name} — home`}
-          width={siteConfig.logo.footer.width}
-          height={siteConfig.logo.footer.height}
-          loading="lazy"
-          decoding="async"
-        />
-      </a>
+      <a class="ftr-brand ftr-brand-text" href="/">{siteConfig.name}</a>
       <p class="ftr-about">{siteConfig.about}</p>
       <div class="ftr-soc">
         {
@@ -60,7 +52,7 @@ const year = new Date().getFullYear();
       </div>
       <div class="ftr-cbox">
         <Icon name="phone" class="ic-sm" />
-        <span><a href={`tel:${siteConfig.contact.phoneHref}`}>{siteConfig.contact.phone}</a></span>
+        <span><PhoneReveal /></span>
       </div>
       <div class="ftr-cbox">
         <Icon name="pin" class="ic-sm" />

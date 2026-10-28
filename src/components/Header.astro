@@ -22,16 +22,7 @@ function target(href: string, anchor?: string) {
 
 <header class="hdr" id="top">
   <div class="wrap hdr-in">
-    <a class="brand" href="/">
-      <img
-        src={siteConfig.logo.header.src}
-        alt={`${siteConfig.name} — home`}
-        width={siteConfig.logo.header.width}
-        height={siteConfig.logo.header.height}
-        fetchpriority="high"
-        decoding="async"
-      />
-    </a>
+    <a class="brand brand-text" href="/">{siteConfig.name}</a>
 
     <nav class="nav" aria-label="Primary">
       {

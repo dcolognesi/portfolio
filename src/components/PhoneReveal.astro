@@ -1,0 +1,51 @@
+---
+import siteConfig from '~/config/site';
+
+interface Props {
+  /** Optional classes, e.g. `btn btn-outline-ink`. */
+  class?: string;
+  /** Text shown before the number is revealed. */
+  label?: string;
+}
+
+const { class: className, label = 'Show phone number' } = Astro.props;
+
+/**
+ * The number is base64-encoded in the markup and only decoded in the browser
+ * after a click. Simple scrapers that read static HTML never see a phone
+ * number; users still get a working `tel:` link.
+ */
+const phoneHref = btoa(siteConfig.contact.phoneHref);
+const phoneLabel = btoa(siteConfig.contact.phone);
+---
+
+<button
+  type="button"
+  class:list={['phone-reveal', className]}
+  data-phone-href={phoneHref}
+  data-phone-label={phoneLabel}
+  aria-label="Show phone number"
+>
+  <slot>{label}</slot>
+</button>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.phone-reveal');
+
+  buttons.forEach((button) => {
+    button.addEventListener(
+      'click',
+      () => {
+        const href = atob(button.dataset.phoneHref ?? '');
+        const label = atob(button.dataset.phoneLabel ?? '');
+        const link = document.createElement('a');
+
+        link.href = `tel:${href}`;
+        link.textContent = label;
+        link.className = button.className.replace(/\bphone-reveal\b/, 'phone-reveal-link');
+        button.replaceWith(link);
+      },
+      { once: true }
+    );
+  });
+</script>

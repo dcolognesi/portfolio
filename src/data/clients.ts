@@ -6,13 +6,12 @@ import type { Client } from '~/types';
  * path or a couple of shapes is all you need.
  */
 export const clients: Client[] = [
-  { name: 'Brightsill', shape: '<circle cx="12" cy="12" r="9"/><path d="M12 3v18"/>' },
-  { name: 'Tessellate', shape: '<path d="M4 20 12 4l8 16z"/>' },
-  { name: 'Coalfield', shape: '<rect x="4" y="4" width="16" height="16" rx="5"/><path d="M9 12h6"/>' },
-  { name: 'Petrichor', shape: '<path d="M12 3.5 20 12l-8 8.5L4 12z"/>' },
-  { name: 'Saltmarsh', shape: '<circle cx="9" cy="12" r="5.5"/><circle cx="15" cy="12" r="5.5"/>' },
-  { name: 'Undergrove', shape: '<path d="M5 18V6l7 6 7-6v12"/>' },
-  { name: 'Meridian', shape: '<circle cx="12" cy="12" r="8.5"/><path d="M7 12h10M12 7v10"/>' },
+  { name: 'Plan.Net Italia', shape: '<path d="M5 20V4h7a5 5 0 0 1 0 10H5"/>' },
+  { name: 'OTO Agency', shape: '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/>' },
+  { name: 'Free-way Agency', shape: '<path d="M4 6h16M4 12h10M4 18h16"/>' },
+  { name: 'A. Minieri S.p.A.', shape: '<path d="M12 4 20 20H4z"/><path d="M8.5 15h7"/>' },
+  { name: 'Coyote Systems', shape: '<path d="M4 12c3-5 5-5 8 0s5 5 8 0"/>' },
+  { name: 'JobsAcademy', shape: '<path d="M4 8 12 4l8 4-8 4z"/><path d="M8 10v5c0 1.5 8 1.5 8 0v-5"/>' },
 ];
 
-export const clientsLabel = 'Shipped with 30+ product teams';
+export const clientsLabel = 'Clients & teams I have worked with';

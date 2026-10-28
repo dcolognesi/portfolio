@@ -1,6 +1,7 @@
 ---
 import Icon from '../Icon.astro';
 import Button from '../Button.astro';
+import PhoneReveal from '../PhoneReveal.astro';
 import siteConfig from '~/config/site';
 import { collaborate } from '~/data/highlights';
 ---
@@ -33,13 +34,13 @@ import { collaborate } from '~/data/highlights';
       <p class="collab-sub">{collaborate.body}</p>
 
       <div class="collab-panel">
-        <a class="cbox" href={`tel:${siteConfig.contact.phoneHref}`}>
+        <div class="cbox">
           <i><Icon name="phone" /></i>
           <span>
             <span class="cbox-lbl">Call the studio</span>
-            <span class="cbox-val">{siteConfig.contact.phone}</span>
+            <PhoneReveal class="cbox-val" />
           </span>
-        </a>
+        </div>
         <a class="cbox" href={`mailto:${siteConfig.contact.email}`}>
           <i><Icon name="mail" /></i>
           <span>

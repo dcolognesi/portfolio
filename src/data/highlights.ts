@@ -5,36 +5,36 @@
  */
 
 export const hero = {
-  greeting: 'Hello. The name is',
+  greeting: 'Hello, my name is',
   /** Rendered on two lines. */
-  nameLines: ['Robin', 'Vale'],
+  nameLines: ['Dario', 'Colognesi'],
   intro:
-    'I art-direct and design for teams who already know what they are building, and need it to feel like one thing instead of forty.',
+    'I turn search, analytics and product data into decisions teams can act on — from tracking architecture to the dashboard on the wall.',
   ctaLabel: 'Book a call',
   ctaHref: '/contact/',
   photo: {
-    src: '/images/hero-portrait.webp',
-    alt: 'Robin Vale, art director, photographed against a plain studio wall',
-    width: 960,
-    height: 1210,
+    src: '/images/colognesi-dario-light.jpeg',
+    alt: 'Dario Colognesi, Data Analyst and SEO Specialist, photographed against a plain studio wall',
+    width: 1280,
+    height: 854,
   },
   aside: {
-    roleLine: ['Independent of the Year 2026', 'Art Direction & Interface'],
-    title: ['Art', 'Direction'],
+    roleLine: ['Data Analyst & SEO Specialist', 'Analytics · SEO · Business Intelligence'],
+    title: ['Data', 'Analytics'],
     /** Small avatar stack — decorative, so the images carry empty alt text. */
     stack: ['/images/avatar-02.webp', '/images/avatar-01.webp', '/images/avatar-03.webp'],
-    stackBadge: '98%',
-    kpi: '210+',
-    kpiLabel: 'launches behind me',
-    note: 'Working across nine time zones',
+    stackBadge: 'GA4',
+    kpi: '11+',
+    kpiLabel: 'years in analytics',
+    note: 'Milano · working across Europe',
   },
 };
 
 export const collaborate = {
   eyebrow: 'Working together',
-  title: 'Most of my work arrives as a half-finished thing somebody is quietly worried about.',
-  body: 'Send me yours and I will tell you what I would do with it — honestly, and before there is any question of an invoice. If it is not a fit, I will name someone who is.',
-  badge: 'Independent since 2011',
+  title: 'Most of my work starts with a number nobody trusts.',
+  body: 'A dashboard that disagrees with the CRM, tracking that lost half the funnel, or a report that takes three days to rebuild. Send me the mess and I will tell you what I would fix first — before there is any question of an invoice. If it is not a fit, I will name someone who is.',
+  badge: 'Analytics since 2015',
   ctaLabel: 'Send me the brief',
   ctaHref: '/contact/',
   /**

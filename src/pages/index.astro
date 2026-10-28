@@ -6,11 +6,9 @@ import Collaborate from '~/components/home/Collaborate.astro';
 import StatsBand from '~/components/home/StatsBand.astro';
 import About from '~/components/home/About.astro';
 import Services from '~/components/home/Services.astro';
-import Toolkit from '~/components/home/Toolkit.astro';
 import Work from '~/components/home/Work.astro';
 import Process from '~/components/home/Process.astro';
-import Awards from '~/components/home/Awards.astro';
-import Testimonials from '~/components/home/Testimonials.astro';
+import CvAccordion from '~/components/home/CvAccordion.astro';
 import Journal from '~/components/home/Journal.astro';
 import Faq from '~/components/home/Faq.astro';
 import Cta from '~/components/home/Cta.astro';
@@ -32,11 +30,9 @@ const jsonLd = graph([personSchema(siteConfig), websiteSchema(siteConfig)]);
   <StatsBand />
   <About />
   <Services />
-  <Toolkit />
   <Work />
   <Process />
-  <Awards />
-  <Testimonials />
+  <CvAccordion />
   <Journal />
   <Faq />
   <Cta id="contact" />
