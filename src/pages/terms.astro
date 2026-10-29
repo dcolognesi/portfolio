@@ -1,6 +1,23 @@
 ---
 import PageLayout from '~/layouts/PageLayout.astro';
 import siteConfig from '~/config/site';
+import { breadcrumbSchema, graph, webPageSchema, websiteSchema } from '~/lib/jsonld';
+
+const termsUrl = `${siteConfig.url}/terms/`;
+const termsDescription = `Terms of use for ${siteConfig.name}.`;
+
+const jsonLd = graph([
+  websiteSchema(siteConfig),
+  webPageSchema(siteConfig, {
+    url: termsUrl,
+    name: 'Terms',
+    description: termsDescription,
+  }),
+  breadcrumbSchema([
+    { name: 'Home', url: `${siteConfig.url}/` },
+    { name: 'Terms', url: termsUrl },
+  ]),
+]);
 ---
 
 <PageLayout
@@ -8,8 +25,9 @@ import siteConfig from '~/config/site';
   heading="Terms"
   eyebrow="Legal"
   intro="Terms for using this portfolio site."
-  description={`Terms of use for ${siteConfig.name}.`}
+  description={termsDescription}
   crumbs={[{ label: 'Terms' }]}
+  jsonLd={jsonLd}
 >
   <section class="wrap sec" style="padding-top:0">
     <div class="prose rev">

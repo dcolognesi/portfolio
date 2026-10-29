@@ -5,7 +5,7 @@ import Cta from '~/components/home/Cta.astro';
 import siteConfig from '~/config/site';
 import { getCollection } from 'astro:content';
 import { isVisible } from '~/lib/utils';
-import { graph, breadcrumbSchema, personSchema } from '~/lib/jsonld';
+import { graph, breadcrumbSchema, collectionPageSchema, personSchema } from '~/lib/jsonld';
 
 const projects = (await getCollection('projects'))
   .filter(isVisible)
@@ -14,11 +14,25 @@ const projects = (await getCollection('projects'))
 /* Filter chips are built from the categories actually in use. */
 const categories = [...new Set(projects.map((p) => p.data.category))].sort();
 
+const workUrl = `${siteConfig.url}/work/`;
+
 const jsonLd = graph([
   personSchema(siteConfig),
+  collectionPageSchema(
+    siteConfig,
+    {
+      url: workUrl,
+      name: 'Projects',
+      description: 'Selected analytics and SEO projects by Dario Colognesi.',
+    },
+    projects.map((project) => ({
+      name: project.data.title,
+      url: `${siteConfig.url}/work/${project.id}/`,
+    }))
+  ),
   breadcrumbSchema([
     { name: 'Home', url: `${siteConfig.url}/` },
-    { name: 'Projects', url: `${siteConfig.url}/work/` },
+    { name: 'Projects', url: workUrl },
   ]),
 ]);
 ---

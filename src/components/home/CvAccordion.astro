@@ -2,7 +2,8 @@
 import Icon from '../Icon.astro';
 import { cvHeading } from '~/data/cv';
 import { experience, experienceHeading } from '~/data/experience';
-import { education, educationHeading } from '~/data/education';
+import { certifications, certificationsHeading, education, educationHeading } from '~/data/education';
+import { languages, languagesHeading } from '~/data/languages';
 ---
 
 <section class="wrap sec" id="cv" aria-labelledby="cv-h">
@@ -92,6 +93,40 @@ import { education, educationHeading } from '~/data/education';
             ))
           }
         </ol>
+
+        <h4 class="cv-subhead">{certificationsHeading.title}</h4>
+        <ol class="timeline-list">
+          {
+            certifications.map((item) => (
+              <li class="timeline-item">
+                <div class="timeline-meta">
+                  <span class="timeline-period">
+                    {item.start} — {item.end}
+                  </span>
+                  {item.location && <span class="timeline-loc">{item.location}</span>}
+                </div>
+
+                <div class="timeline-body">
+                  <h5>{item.qualification}</h5>
+                  <p class="timeline-org">{item.institution}</p>
+                  {item.summary && <p>{item.summary}</p>}
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <section class="cv-block" id="languages" aria-labelledby="cv-lang">
+        <h3 id="cv-lang">{languagesHeading.title}</h3>
+        <ul class="lang-list">
+          {languages.map((item) => (
+            <li class="lang-item">
+              <span class="lang-name">{item.language}</span>
+              <span class="lang-level">{item.level}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
     </div>
@@ -100,7 +135,7 @@ import { education, educationHeading } from '~/data/education';
 
 <script>
   const accordion = document.querySelector<HTMLDetailsElement>('.cv-acc');
-  const hashes = ['#cv', '#experience', '#education'];
+  const hashes = ['#cv', '#experience', '#education', '#languages'];
   const hash = window.location.hash;
   const openForHash = (value: string) => {
     if (accordion && hashes.includes(value)) accordion.open = true;

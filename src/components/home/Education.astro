@@ -1,6 +1,6 @@
 ---
 import SectionHeading from '../SectionHeading.astro';
-import { education, educationHeading } from '~/data/education';
+import { certifications, certificationsHeading, education, educationHeading } from '~/data/education';
 ---
 
 {
@@ -37,6 +37,26 @@ import { education, educationHeading } from '~/data/education';
                     ))}
                   </ul>
                 )}
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <h3 class="timeline-subhead">{certificationsHeading.title}</h3>
+        <ol class="timeline-list">
+          {certifications.map((item) => (
+            <li class="timeline-item rev">
+              <div class="timeline-meta">
+                <span class="timeline-period">
+                  {item.start} — {item.end}
+                </span>
+                {item.location && <span class="timeline-loc">{item.location}</span>}
+              </div>
+
+              <div class="timeline-body">
+                <h4>{item.qualification}</h4>
+                <p class="timeline-org">{item.institution}</p>
+                {item.summary && <p>{item.summary}</p>}
               </div>
             </li>
           ))}

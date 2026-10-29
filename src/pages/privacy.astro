@@ -1,8 +1,24 @@
 ---
 import PageLayout from '~/layouts/PageLayout.astro';
 import siteConfig from '~/config/site';
+import { breadcrumbSchema, graph, webPageSchema, websiteSchema } from '~/lib/jsonld';
 
 const updated = 'Last updated: October 2026.';
+const privacyUrl = `${siteConfig.url}/privacy/`;
+const privacyDescription = `How ${siteConfig.name} handles visitor data.`;
+
+const jsonLd = graph([
+  websiteSchema(siteConfig),
+  webPageSchema(siteConfig, {
+    url: privacyUrl,
+    name: 'Privacy',
+    description: privacyDescription,
+  }),
+  breadcrumbSchema([
+    { name: 'Home', url: `${siteConfig.url}/` },
+    { name: 'Privacy', url: privacyUrl },
+  ]),
+]);
 ---
 
 <PageLayout
@@ -10,8 +26,9 @@ const updated = 'Last updated: October 2026.';
   heading="Privacy"
   eyebrow="Legal"
   intro="How this site handles visitor data."
-  description={`How ${siteConfig.name} handles visitor data.`}
+  description={privacyDescription}
   crumbs={[{ label: 'Privacy' }]}
+  jsonLd={jsonLd}
 >
   <section class="wrap sec" style="padding-top:0">
     <div class="prose rev">

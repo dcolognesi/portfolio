@@ -81,6 +81,9 @@ export interface SiteConfig {
   url: string;
   /** Default Open Graph image, relative to the site root. */
   ogImage: string;
+  /** Pixel dimensions of the default Open Graph image (1200×630 is ideal). */
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   /** BCP-47 language tag used on `<html lang>`. */
   locale: string;
   /** `theme-color` meta value. */
@@ -176,6 +179,14 @@ export interface ExperienceItem {
   highlights?: string[];
   /** Optional skill tags shown under the entry. */
   tags?: string[];
+}
+
+/** One spoken language in the CV. */
+export interface LanguageItem {
+  /** Language name, e.g. `English`. */
+  language: string;
+  /** Proficiency level, e.g. `Native` or `C2`. */
+  level: string;
 }
 
 /** One qualification in the education timeline. */

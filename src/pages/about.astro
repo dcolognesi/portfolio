@@ -7,13 +7,21 @@ import CvAccordion from '~/components/home/CvAccordion.astro';
 import Process from '~/components/home/Process.astro';
 import Cta from '~/components/home/Cta.astro';
 import siteConfig from '~/config/site';
-import { graph, personSchema, breadcrumbSchema } from '~/lib/jsonld';
+import { graph, personSchema, breadcrumbSchema, profilePageSchema } from '~/lib/jsonld';
+
+const aboutUrl = `${siteConfig.url}/about/`;
+const aboutDescription = `About ${siteConfig.author} — data analyst working across marketing analytics, BI, automation and technical SEO.`;
 
 const jsonLd = graph([
   personSchema(siteConfig),
+  profilePageSchema(siteConfig, {
+    url: aboutUrl,
+    name: 'About',
+    description: aboutDescription,
+  }),
   breadcrumbSchema([
     { name: 'Home', url: `${siteConfig.url}/` },
-    { name: 'About', url: `${siteConfig.url}/about/` },
+    { name: 'About', url: aboutUrl },
   ]),
 ]);
 ---
@@ -23,7 +31,7 @@ const jsonLd = graph([
   heading="Measurement built around the decision."
   eyebrow="About"
   intro={`${siteConfig.author} is a data analyst working across marketing analytics, BI, automation and technical SEO. Based in Milan, Italy.`}
-  description={`About ${siteConfig.author} — data analyst working across marketing analytics, BI, automation and technical SEO.`}
+  description={aboutDescription}
   crumbs={[{ label: 'About' }]}
   jsonLd={jsonLd}
 >

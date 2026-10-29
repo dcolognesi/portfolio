@@ -25,9 +25,9 @@ export const hero = {
     /** Optional avatar stack — left empty because there is no verified team imagery. */
     stack: [] as string[],
     stackBadge: '',
-    kpi: '11+',
-    kpiLabel: 'years across analytics and SEO',
-    note: 'Milan, Italy',
+    kpi: '',
+    kpiLabel: '',
+    note: 'Located in Milan and open to remote work opportunities globally.',
   },
 };
 

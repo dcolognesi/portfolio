@@ -5,13 +5,29 @@ import Icon from '~/components/Icon.astro';
 import PhoneReveal from '~/components/PhoneReveal.astro';
 import Faq from '~/components/home/Faq.astro';
 import siteConfig from '~/config/site';
-import { graph, personSchema, breadcrumbSchema } from '~/lib/jsonld';
+import { faq } from '~/data/faq';
+import {
+  breadcrumbSchema,
+  contactPageSchema,
+  faqPageSchema,
+  graph,
+  personSchema,
+} from '~/lib/jsonld';
+
+const contactUrl = `${siteConfig.url}/contact/`;
+const contactDescription = `Contact ${siteConfig.author} about analytics, BI, automation and technical SEO.`;
 
 const jsonLd = graph([
   personSchema(siteConfig),
+  contactPageSchema(siteConfig, {
+    url: contactUrl,
+    name: 'Contact',
+    description: contactDescription,
+  }),
+  faqPageSchema(faq),
   breadcrumbSchema([
     { name: 'Home', url: `${siteConfig.url}/` },
-    { name: 'Contact', url: `${siteConfig.url}/contact/` },
+    { name: 'Contact', url: contactUrl },
   ]),
 ]);
 ---
@@ -21,7 +37,7 @@ const jsonLd = graph([
   heading="Get in touch about analytics, BI or technical SEO."
   eyebrow="Contact"
   intro="Share the context, the decision you need to support and any deadline. A short note is enough to start."
-  description={`Contact ${siteConfig.author} about analytics, BI, automation and technical SEO.`}
+  description={contactDescription}
   crumbs={[{ label: 'Contact' }]}
   jsonLd={jsonLd}
 >

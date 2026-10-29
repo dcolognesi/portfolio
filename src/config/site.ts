@@ -26,7 +26,9 @@ export const siteConfig: SiteConfig = {
   description:
     'Portfolio of Dario Colognesi, a data analyst working across marketing analytics, BI, automation and technical SEO. Based in Milan, Italy.',
   url: import.meta.env.SITE ?? 'https://swp-freelancer-portfolio.vercel.app',
-  ogImage: '/images/colognesi-dario-light.jpeg',
+  ogImage: '/images/og-dario.jpg',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
   locale: 'en',
   themeColor: '#c8f14d',
 

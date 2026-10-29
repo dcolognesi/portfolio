@@ -27,7 +27,12 @@ import { clients, clientsLabel } from '~/data/clients';
   if (track && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const clone = track.cloneNode(true) as HTMLElement;
     clone.removeAttribute('id');
-    clone.setAttribute('aria-hidden', 'true');
-    while (clone.firstChild) track.appendChild(clone.firstChild);
+    while (clone.firstChild) {
+      const node = clone.firstChild;
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        (node as HTMLElement).setAttribute('aria-hidden', 'true');
+      }
+      track.appendChild(node);
+    }
   }
 </script>

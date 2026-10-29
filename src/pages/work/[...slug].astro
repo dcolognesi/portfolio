@@ -8,7 +8,7 @@ import Button from '~/components/Button.astro';
 import Cta from '~/components/home/Cta.astro';
 import siteConfig from '~/config/site';
 import { isVisible } from '~/lib/utils';
-import { graph, breadcrumbSchema, personSchema } from '~/lib/jsonld';
+import { graph, breadcrumbSchema, personSchema, projectSchema } from '~/lib/jsonld';
 
 export const getStaticPaths = (async () => {
   const projects = (await getCollection('projects'))
@@ -33,12 +33,22 @@ const { project, next } = Astro.props;
 const { Content } = await render(project);
 const d = project.data;
 
+const projectUrl = `${siteConfig.url}/work/${project.id}/`;
+
 const jsonLd = graph([
   personSchema(siteConfig),
+  projectSchema(siteConfig, {
+    title: d.title,
+    description: d.description,
+    url: projectUrl,
+    image: d.image?.src,
+    category: d.category,
+    keywords: [...d.services, ...d.technologies],
+  }),
   breadcrumbSchema([
     { name: 'Home', url: `${siteConfig.url}/` },
     { name: 'Projects', url: `${siteConfig.url}/work/` },
-    { name: d.title, url: `${siteConfig.url}/work/${project.id}/` },
+    { name: d.title, url: projectUrl },
   ]),
 ]);
 ---

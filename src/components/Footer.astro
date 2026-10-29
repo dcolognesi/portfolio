@@ -3,13 +3,6 @@ import Icon from './Icon.astro';
 import PhoneReveal from './PhoneReveal.astro';
 import siteConfig from '~/config/site';
 import { footerNav } from '~/data/navigation';
-import { getCollection } from 'astro:content';
-import { isVisible } from '~/lib/utils';
-
-const services = (await getCollection('services'))
-  .filter(isVisible)
-  .sort((a, b) => a.data.order - b.data.order)
-  .slice(0, 5);
 
 const year = new Date().getFullYear();
 ---
@@ -36,15 +29,6 @@ const year = new Date().getFullYear();
         {footerNav.explore.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
       </ul>
     </nav>
-
-    {services.length > 0 && (
-      <nav aria-labelledby="ftr-services">
-        <h2 id="ftr-services">Services</h2>
-        <ul class="ftr-links">
-          {services.map((s) => <li><a href={`/services/${s.id}/`}>{s.data.title}</a></li>)}
-        </ul>
-      </nav>
-    )}
 
     <div>
       <h2>Get in touch</h2>

@@ -10,9 +10,10 @@ import CvAccordion from '~/components/home/CvAccordion.astro';
 import Faq from '~/components/home/Faq.astro';
 import Cta from '~/components/home/Cta.astro';
 import siteConfig from '~/config/site';
-import { graph, personSchema, websiteSchema } from '~/lib/jsonld';
+import { faq } from '~/data/faq';
+import { faqPageSchema, graph, personSchema, websiteSchema } from '~/lib/jsonld';
 
-const jsonLd = graph([personSchema(siteConfig), websiteSchema(siteConfig)]);
+const jsonLd = graph([personSchema(siteConfig), websiteSchema(siteConfig), faqPageSchema(faq)]);
 ---
 
 <BaseLayout

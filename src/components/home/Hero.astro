@@ -63,7 +63,9 @@ import { hero } from '~/data/highlights';
           </div>
         </div>
       )}
-      <p class="hero-kpi">{hero.aside.kpi} <span>{hero.aside.kpiLabel}</span></p>
+      {hero.aside.kpi && (
+        <p class="hero-kpi">{hero.aside.kpi} <span>{hero.aside.kpiLabel}</span></p>
+      )}
       <p class="hero-note">{hero.aside.note}</p>
     </div>
   </div>
