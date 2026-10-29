@@ -148,6 +148,9 @@
     transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
   }
   html.js .rev.in { opacity: 1; transform: none; }
+  /* Section headings keep the eyebrow pinned to the section, not to the
+     transformed heading box (a transform creates a containing block). */
+  html.js .sh.rev { transform: none; }
   html.js .rev-d1 { transition-delay: 0.08s; }
   html.js .rev-d2 { transition-delay: 0.16s; }
   html.js .rev-d3 { transition-delay: 0.24s; }

@@ -17,7 +17,7 @@ results:
     label: Follow-up design requests in six months
 featured: true
 order: 2
-draft: true
+draft: false
 ---
 
 ## A brand a team of nine can run

@@ -39,14 +39,14 @@ export const collaborate = {
   ctaHref: '/contact/',
   images: [
     {
-      src: '/images/distrust-1-1.jpeg',
-      alt: 'Two people reviewing analytics dashboards on a tablet and laptop',
+      src: '/images/distrust-2.jpeg',
+      alt: 'Two colleagues reviewing printed charts and analytics reports at a table',
       width: 640,
       height: 427,
     },
     {
-      src: '/images/distrust-2.jpeg',
-      alt: 'Two colleagues reviewing printed charts and analytics reports at a table',
+      src: '/images/distrust 1.1.jpeg',
+      alt: 'Two people reviewing a printed analytics report with charts',
       width: 640,
       height: 427,
     },
@@ -63,10 +63,10 @@ export const about = {
     'If the metric cannot be trusted, I say so before it reaches a board deck.',
   ],
   image: {
-    src: '/images/messy_data_2.jpeg',
-    alt: 'Messy data spreadsheets and charts across a desk',
-    width: 640,
-    height: 424,
+    src: '/images/about-studio.webp',
+    alt: 'Designers arranging sticky notes and printed layouts across a studio table',
+    width: 900,
+    height: 954,
   },
   badge: {
     value: '11+',

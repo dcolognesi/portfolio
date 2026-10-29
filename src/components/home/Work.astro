@@ -14,14 +14,14 @@ const projects = (await getCollection('projects'))
 ---
 
 <section class="wrap sec" id="work" aria-labelledby="work-h">
-  <SectionHeading class="rev" eyebrow={workHeading.eyebrow} title={workHeading.title} id="work-h">
+  <SectionHeading eyebrow={workHeading.eyebrow} title={workHeading.title} id="work-h">
     <Button href="/work/" variant="ink">View all projects</Button>
   </SectionHeading>
 
   <div class="work-grid">
     {
-      projects.map((project, i) => (
-        <WorkCard project={project} class:list={['rev', i % 3 > 0 && `rev-d${i % 3}`]} />
+      projects.map((project) => (
+        <WorkCard project={project} />
       ))
     }
   </div>

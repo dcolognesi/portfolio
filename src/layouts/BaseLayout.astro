@@ -46,6 +46,15 @@ const { bodyClass, ...seo } = Astro.props;
          enhancements (scroll reveal, the nav drawer) never flash. -->
     <script is:inline>
       document.documentElement.classList.add('js');
+      /* If the module script that sets up the reveal never runs, make sure
+         the content still becomes visible instead of staying at opacity 0. */
+      window.addEventListener('load', () => {
+        window.setTimeout(() => {
+          if (!document.documentElement.dataset.revealReady) {
+            document.querySelectorAll('.rev').forEach((el) => el.classList.add('in'));
+          }
+        }, 1500);
+      });
     </script>
 
     <Seo {...seo} />
@@ -70,10 +79,12 @@ const { bodyClass, ...seo } = Astro.props;
 
       /* --- Scroll reveal --------------------------------------------- */
       {
+        document.documentElement.dataset.revealReady = 'true';
         const els = document.querySelectorAll<HTMLElement>('.rev');
+        const revealAll = () => els.forEach((el) => el.classList.add('in'));
         if (els.length) {
           if (!('IntersectionObserver' in window) || reduce) {
-            els.forEach((el) => el.classList.add('in'));
+            revealAll();
           } else {
             const io = new IntersectionObserver(
               (entries) => {
@@ -87,6 +98,9 @@ const { bodyClass, ...seo } = Astro.props;
               { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
             );
             els.forEach((el) => io.observe(el));
+            /* Safety net: never leave content invisible if the observer
+               fails to fire (e.g. a full-page screenshot or a failed script). */
+            window.setTimeout(revealAll, 4000);
           }
         }
       }

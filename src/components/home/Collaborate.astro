@@ -1,4 +1,5 @@
 ---
+import Icon from '../Icon.astro';
 import { collaborate } from '~/data/highlights';
 ---
 
@@ -20,6 +21,9 @@ import { collaborate } from '~/data/highlights';
             </div>
           ))
         }
+        <a class="collab-arrow" href="/work/" aria-label="View selected projects">
+          <Icon name="arrow" class="ic-sm" />
+        </a>
       </div>
     </div>
 
