@@ -33,23 +33,22 @@ export const hero = {
 
 export const collaborate = {
   eyebrow: 'Working together',
-  title: 'Most of my work starts with a number nobody trusts.',
+  title: 'Most of my work starts with numbers nobody trusts.',
   body: 'A dashboard that disagrees with the CRM, tracking that lost half the funnel, or a report that takes three days to rebuild. Send me the mess and I will tell you what I would fix first — before there is any question of an invoice. If it is not a fit, I will name someone who is.',
-  badge: 'Analytics since 2015',
   ctaLabel: 'Send me the brief',
   ctaHref: '/contact/',
   images: [
     {
-      src: '/images/collab-team.webp',
-      alt: 'Two colleagues standing in a bright office, reviewing work together on a tablet',
-      width: 760,
-      height: 760,
+      src: '/images/distrust-1-1.jpeg',
+      alt: 'Two people reviewing analytics dashboards on a tablet and laptop',
+      width: 640,
+      height: 427,
     },
     {
-      src: '/images/collab-meeting.webp',
-      alt: 'Two colleagues talking over an open laptop at a meeting table',
-      width: 760,
-      height: 760,
+      src: '/images/distrust-2.jpeg',
+      alt: 'Two colleagues reviewing printed charts and analytics reports at a table',
+      width: 640,
+      height: 427,
     },
   ],
 };
@@ -64,10 +63,10 @@ export const about = {
     'If the metric cannot be trusted, I say so before it reaches a board deck.',
   ],
   image: {
-    src: '/images/about-studio.webp',
-    alt: 'Designers arranging sticky notes and printed layouts across a studio table',
-    width: 900,
-    height: 954,
+    src: '/images/messy_data_2.jpeg',
+    alt: 'Messy data spreadsheets and charts across a desk',
+    width: 640,
+    height: 424,
   },
   badge: {
     value: '11+',
