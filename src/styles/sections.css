@@ -1365,3 +1365,81 @@
   .cv-toggle { font-size: 16px; }
   .cv-body { padding: 20px; }
 }
+
+/* ============================================================
+   15. Methodology accordion
+   Collapsible wrapper grouping Background, Capabilities and Outcomes.
+   ============================================================ */
+.method-acc {
+  border: 1.5px solid var(--swp-line);
+  border-radius: 0;
+  background: var(--surface-a);
+  overflow: hidden;
+}
+.method-toggle {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: clamp(18px, 2.2vw, 24px) clamp(20px, 3vw, 32px);
+  background: var(--swp-lime);
+  color: var(--swp-ink);
+  cursor: pointer;
+  list-style: none;
+  transition: background 0.25s var(--ease);
+}
+.method-toggle:hover { background: var(--swp-lime-deep); }
+.method-toggle::-webkit-details-marker { display: none; }
+.method-toggle-t {
+  flex: 1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 26px);
+  font-weight: 600;
+  letter-spacing: -0.024em;
+}
+.method-toggle-ic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--swp-ink);
+  color: var(--swp-lime);
+  display: grid;
+  place-items: center;
+  flex: none;
+  transition: transform 0.3s var(--ease);
+}
+.method-acc[open] .method-toggle-ic { transform: rotate(45deg); }
+
+/* Smooth open/close; the toggle works with or without it. */
+.method-acc::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition: block-size 0.4s var(--ease), content-visibility 0.4s allow-discrete;
+}
+.method-acc[open]::details-content { block-size: auto; }
+
+.method-body {
+  padding: clamp(18px, 2.4vw, 28px);
+  display: grid;
+  gap: clamp(18px, 2.4vw, 28px);
+}
+
+/* Nested sections lose their own shell: the accordion is the single box. */
+.method-body #about,
+.method-body #background,
+.method-body #process,
+.method-body .kit {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: clamp(20px, 3.2vw, 56px);
+  background: var(--surface-b);
+  border-radius: var(--r-md);
+}
+.method-body .kit > .wrap { padding-inline: 0; }
+.method-body .sec { padding-block: clamp(48px, 5vw, 84px); }
+.method-body .sec-top::before { display: none; }
+@media (max-width: 700px) {
+  .method-toggle-t { font-size: 16px; }
+  .method-body { padding: 14px; }
+}

@@ -3,12 +3,10 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
 import Hero from '~/components/home/Hero.astro';
 import TrustedStrip from '~/components/home/TrustedStrip.astro';
 import Collaborate from '~/components/home/Collaborate.astro';
-import About from '~/components/home/About.astro';
 import StatsBand from '~/components/home/StatsBand.astro';
 import Work from '~/components/home/Work.astro';
-import Toolkit from '~/components/home/Toolkit.astro';
+import Methodology from '~/components/home/Methodology.astro';
 import CvAccordion from '~/components/home/CvAccordion.astro';
-import Process from '~/components/home/Process.astro';
 import Faq from '~/components/home/Faq.astro';
 import Cta from '~/components/home/Cta.astro';
 import siteConfig from '~/config/site';
@@ -28,11 +26,9 @@ const jsonLd = graph([personSchema(siteConfig), websiteSchema(siteConfig)]);
   <TrustedStrip />
   <Collaborate />
   <StatsBand />
-  <About />
+  <Methodology />
   <Work />
-  <Toolkit />
   <CvAccordion />
-  <Process />
   <Faq />
   <Cta id="contact" />
 </BaseLayout>

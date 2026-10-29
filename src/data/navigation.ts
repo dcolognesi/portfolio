@@ -8,7 +8,7 @@ import type { NavItem } from '~/types';
  */
 export const primaryNav: NavItem[] = [
   { label: 'Selected projects', href: '/work/', anchor: '#work' },
-  { label: 'How I work', href: '/#process', anchor: '#process' },
+  { label: 'Outcomes', href: '/#process', anchor: '#process' },
   { label: 'Capabilities', href: '/#skills', anchor: '#skills' },
   { label: 'Background', href: '/#about', anchor: '#about' },
   { label: 'FAQ', href: '/#faq', anchor: '#faq' },

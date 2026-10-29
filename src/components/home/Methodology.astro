@@ -1,0 +1,45 @@
+---
+import Icon from '../Icon.astro';
+import About from './About.astro';
+import Toolkit from './Toolkit.astro';
+import Process from './Process.astro';
+---
+
+<section class="wrap sec method" id="method" aria-labelledby="method-h">
+  <details class="method-acc rev">
+    <summary class="method-toggle">
+      <h2 class="method-toggle-t" id="method-h">
+        Discover how I deliver value: <em>My Methodology</em>
+      </h2>
+      <span class="method-toggle-ic" aria-hidden="true">
+        <Icon name="plus" class="ic-sm" />
+      </span>
+    </summary>
+
+    <div class="method-body">
+      <About />
+      <Toolkit />
+      <Process />
+    </div>
+  </details>
+</section>
+
+<script>
+  const accordion = document.querySelector<HTMLDetailsElement>('.method-acc');
+  const hashes = ['#method', '#about', '#background', '#skills', '#process'];
+  const hash = window.location.hash;
+  const openForHash = (value: string) => {
+    if (accordion && hashes.includes(value)) accordion.open = true;
+  };
+
+  openForHash(hash);
+  if (accordion?.open && hash) {
+    requestAnimationFrame(() => document.querySelector(hash)?.scrollIntoView({ block: 'start' }));
+  }
+
+  document.addEventListener('click', (event) => {
+    const link = (event.target as Element | null)?.closest('a');
+    const href = link?.getAttribute('href');
+    if (href?.startsWith('#')) openForHash(href);
+  });
+</script>

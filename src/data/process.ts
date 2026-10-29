@@ -28,7 +28,7 @@ export const process: ProcessStep[] = [
 ];
 
 export const processHeading = {
-  eyebrow: 'How I work',
+  eyebrow: 'Outcomes',
   title: 'A measurement process that ends with data the team can run.',
   intro:
     'The sequence is deliberate: define the decision, check the data, build the layer, then validate and transfer it. The output should not depend on me being in the room.',
