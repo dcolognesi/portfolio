@@ -122,7 +122,7 @@
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.95fr) minmax(0, 0.68fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr) minmax(0, 0.7fr);
   gap: clamp(20px, 2.4vw, 52px);
   align-items: center;
 }
@@ -196,9 +196,11 @@
   align-items: center;
   justify-content: center;
   gap: 9px;
-  padding: 16px 10px;
-  font-size: 14px;
+  padding: 16px 6px;
+  font-size: 13.5px;
   font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 .dot-live {
   width: 8px;
@@ -292,6 +294,7 @@
 @media (max-width: 720px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-card { grid-row: auto; }
+  .hero-avail { white-space: normal; font-size: 13px; }
 }
 
 /* ============================================================
@@ -734,7 +737,7 @@
   z-index: 1;
   margin: 0;
   padding: 8px 16px 8px clamp(20px, 3.2vw, 56px);
-  background: #fff;
+  background: var(--swp-lime);
   border: 1px solid var(--swp-line);
   border-left: 0;
   border-radius: 0 0 10px 0;
@@ -1206,11 +1209,14 @@
 .cta > * { position: relative; }
 .cta h2 { max-width: 22ch; margin: 18px 0 20px; }
 .cta p { max-width: 50ch; margin: 0 0 34px; color: rgba(16, 17, 16, 0.66); font-size: 16px; }
-.cta .eyebrow { color: rgba(16, 17, 16, 0.6); }
+.cta .eyebrow { color: var(--swp-ink); padding: 9px 18px; white-space: nowrap; }
 .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-start; }
 .cta-ring { position: absolute; border-radius: 50%; border: 1.5px solid rgba(16, 17, 16, 0.14); }
 .cta-ring.a { width: 340px; height: 340px; left: -120px; bottom: -150px; }
 .cta-ring.b { width: 240px; height: 240px; right: -70px; top: -90px; }
+@media (max-width: 560px) {
+  .cta .eyebrow { white-space: normal; padding: 8px 14px; }
+}
 
 /* ============================================================
    16. Footer
@@ -1302,17 +1308,20 @@
 /* ============================================================
    14. CV accordion
    ============================================================ */
+/* Full-width CV: the accordion spans the section box with a 20px inset. */
+.home #cv { padding-inline: 0; }
+.home #cv .cv-head { padding-inline: clamp(20px, 3.2vw, 56px); }
 .cv-head {
-  max-width: 780px;
   margin-bottom: clamp(26px, 3vw, 42px);
 }
-.cv-head .lead { max-width: 62ch; margin-top: 14px; }
+.cv-head .lead { max-width: none; margin-top: 14px; }
 .cv-acc {
   border: 1.5px solid var(--swp-line);
   border-radius: var(--r-lg);
   background: #fff;
   overflow: hidden;
 }
+.home #cv .cv-acc { margin-inline: 20px; }
 .cv-toggle {
   display: flex;
   align-items: center;
@@ -1347,39 +1356,49 @@
 }
 .cv-acc[open] .cv-toggle-ic { transform: rotate(45deg); }
 .cv-body {
-  padding: clamp(24px, 3.4vw, 48px);
+  padding: clamp(24px, 3.4vw, 48px) 0;
   display: grid;
   gap: clamp(36px, 4.5vw, 64px);
 }
 .cv-block h3 {
+  padding-inline: clamp(20px, 2.6vw, 36px);
   font-size: clamp(24px, 2.6vw, 36px);
   letter-spacing: -0.028em;
   margin-bottom: 18px;
 }
 .cv-block .timeline-list { border-top: 1px solid var(--swp-line); }
+.cv-block .timeline-item { padding-inline: clamp(20px, 2.6vw, 36px); }
 .cv-block .timeline-body h4 {
   font-size: clamp(20px, 2.1vw, 28px);
   letter-spacing: -0.026em;
 }
 @media (max-width: 700px) {
   .cv-toggle { font-size: 16px; }
-  .cv-body { padding: 20px; }
+  .cv-body { padding: 20px 0; }
 }
 
 /* ============================================================
    15. Methodology accordion
    Collapsible wrapper grouping Background, Capabilities and Outcomes.
    ============================================================ */
+/* Flush against the stats band box above: same shell, no gap, shared edge. */
+.method {
+  padding-block: 0 50px;
+}
 .method-acc {
+  width: 100%;
+  max-width: var(--content);
+  margin-inline: auto;
   border: 1.5px solid var(--swp-line);
+  border-top: 0;
   border-radius: 0;
   background: var(--surface-a);
   overflow: hidden;
 }
 .method-toggle {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 16px;
   padding: clamp(18px, 2.2vw, 24px) clamp(20px, 3vw, 32px);
   background: var(--swp-lime);
   color: var(--swp-ink);
@@ -1392,12 +1411,18 @@
 .method-toggle-t {
   flex: 1;
   margin: 0;
+  padding-inline: 52px;
   font-family: var(--font-display);
   font-size: clamp(18px, 2vw, 26px);
   font-weight: 600;
   letter-spacing: -0.024em;
+  text-transform: uppercase;
+  text-align: center;
 }
 .method-toggle-ic {
+  position: absolute;
+  top: 50%;
+  right: clamp(20px, 3vw, 32px);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -1406,9 +1431,10 @@
   display: grid;
   place-items: center;
   flex: none;
+  transform: translateY(-50%);
   transition: transform 0.3s var(--ease);
 }
-.method-acc[open] .method-toggle-ic { transform: rotate(45deg); }
+.method-acc[open] .method-toggle-ic { transform: translateY(-50%) rotate(45deg); }
 
 /* Smooth open/close; the toggle works with or without it. */
 .method-acc::details-content {
@@ -1439,6 +1465,7 @@
 .method-body .kit > .wrap { padding-inline: 0; }
 .method-body .sec { padding-block: clamp(48px, 5vw, 84px); }
 .method-body .sec-top::before { display: none; }
+
 @media (max-width: 700px) {
   .method-toggle-t { font-size: 16px; }
   .method-body { padding: 14px; }

@@ -9,7 +9,10 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--swp-slate);
+  color: var(--swp-ink);
+  background: var(--swp-lime);
+  padding: 8px 16px;
+  border-radius: var(--r-pill);
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -19,7 +22,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--swp-lime-deep);
+  background: var(--swp-ink);
   flex: none;
 }
 
