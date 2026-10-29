@@ -63,10 +63,10 @@ export const about = {
     'If the metric cannot be trusted, I say so before it reaches a board deck.',
   ],
   image: {
-    src: '/images/about-studio.webp',
-    alt: 'Designers arranging sticky notes and printed layouts across a studio table',
-    width: 900,
-    height: 954,
+    src: '/images/messy_data_2.jpeg',
+    alt: 'Messy data spreadsheets and charts across a desk',
+    width: 640,
+    height: 424,
   },
   badge: {
     value: '11+',
