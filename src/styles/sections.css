@@ -169,7 +169,15 @@
   background: var(--swp-mist);
   aspect-ratio: 1 / 1.26;
 }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  /* Crop the lower body and leave more headroom above the head. */
+  transform: translateX(10px) scale(1.35);
+  transform-origin: center top;
+}
 
 .hero-social {
   position: absolute;
