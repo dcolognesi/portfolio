@@ -1,5 +1,5 @@
 ---
-title: 'Web Analytics Dashboard Case Study: From Website Traffic to Lead Tracking'
+title: 'Google Data Studio: From Website Traffic to Lead Tracking'
 client: Confidential client
 year: '2020'
 category: Product
