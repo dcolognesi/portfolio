@@ -9,9 +9,11 @@ const year = new Date().getFullYear();
 
 <footer class="ftr">
   <div class="wrap ftr-top">
-    <div>
-      <a class="ftr-brand ftr-brand-text" href="/">{siteConfig.name}</a>
-      <p class="ftr-about">{siteConfig.about}</p>
+    <div class="ftr-intro">
+      <div class="ftr-intro-text">
+        <a class="ftr-brand ftr-brand-text" href="/">{siteConfig.name}</a>
+        <p class="ftr-about">{siteConfig.about}</p>
+      </div>
       <div class="ftr-soc">
         {
           siteConfig.social.map((s) => (

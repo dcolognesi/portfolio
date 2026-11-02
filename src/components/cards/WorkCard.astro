@@ -11,7 +11,7 @@ interface Props {
 }
 
 const { project, eager = false, class: className } = Astro.props;
-const { title, excerpt, year, category, image, hero, artwork } = project.data;
+const { title, excerpt, category, image, hero, artwork } = project.data;
 /** Prefer the case-study hero for cards when one is defined. */
 const cardImage = hero ?? image;
 ---
@@ -22,7 +22,6 @@ const cardImage = hero ?? image;
   data-category={category}
 >
   <div class="work-media">
-    <span class="work-year">{year}</span>
     {
       cardImage ? (
         <img

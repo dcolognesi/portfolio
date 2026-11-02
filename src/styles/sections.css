@@ -834,6 +834,13 @@
   overflow: hidden;
   background: var(--swp-mist);
   position: relative;
+  box-shadow: 0 24px 48px -34px rgba(16, 17, 16, 0.55);
+  transition: box-shadow 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.work-card:hover,
+.work-card:focus-visible {
+  box-shadow: 0 32px 60px -34px rgba(16, 17, 16, 0.65);
+  transform: translateY(-3px);
 }
 .work-media { aspect-ratio: 4 / 3; overflow: hidden; background: var(--swp-line); position: relative; }
 .work-media img,
@@ -1271,24 +1278,42 @@
   letter-spacing: -0.035em;
   color: #fff;
 }
+.ftr-intro {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.ftr-intro-text { min-width: 0; }
 .ftr-about {
   font-size: 14.6px;
   color: rgba(255, 255, 255, 0.58);
   line-height: 1.7;
   max-width: 38ch;
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
-.ftr-soc { display: flex; gap: 9px; }
+.ftr-soc {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  flex: none;
+}
 .ftr-soc a {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.2);
+  background: var(--swp-lime);
+  color: var(--swp-ink);
   display: grid;
   place-items: center;
-  transition: background 0.28s var(--ease), color 0.28s var(--ease), box-shadow 0.28s var(--ease);
+  transition: background 0.28s var(--ease), color 0.28s var(--ease), transform 0.28s var(--ease);
 }
-.ftr-soc a:hover { background: var(--swp-lime); color: var(--swp-ink); box-shadow: inset 0 0 0 1.5px var(--swp-lime); }
+.ftr-soc a:hover {
+  background: var(--swp-ink);
+  color: var(--swp-lime);
+  box-shadow: inset 0 0 0 1.5px #fff;
+  transform: translateY(-2px);
+}
 
 .ftr h2 {
   font-family: var(--font-display);
@@ -1298,6 +1323,13 @@
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.45);
   margin-bottom: 20px;
+}
+.ftr-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: column;
+  column-gap: clamp(18px, 2.4vw, 32px);
 }
 .ftr-links li { margin-bottom: 11px; }
 .ftr-links a { font-size: 14.8px; color: rgba(255, 255, 255, 0.74); transition: color 0.25s var(--ease); }
@@ -1346,6 +1378,7 @@
   border-radius: var(--r-lg);
   background: #fff;
   overflow: hidden;
+  box-shadow: 0 24px 48px -34px rgba(16, 17, 16, 0.55);
 }
 .home #cv .cv-acc { margin-inline: 20px; }
 .cv-toggle {
