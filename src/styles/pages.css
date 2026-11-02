@@ -343,7 +343,7 @@
   background: var(--swp-mist);
   transition: background 0.3s var(--ease);
 }
-a.contact-card:hover { background: var(--swp-lime); }
+.contact-card:hover { background: var(--swp-lime); }
 .contact-card i {
   width: 44px;
   height: 44px;
@@ -355,7 +355,7 @@ a.contact-card:hover { background: var(--swp-lime); }
 }
 .contact-card b { display: block; font-family: var(--font-display); font-size: 15px; letter-spacing: -0.02em; margin-bottom: 3px; }
 .contact-card span { font-size: 14px; color: var(--swp-slate); line-height: 1.55; }
-a.contact-card:hover span { color: var(--swp-graphite); }
+.contact-card:hover span { color: var(--swp-graphite); }
 
 @media (max-width: 880px) {
   .contact-grid { grid-template-columns: 1fr; }

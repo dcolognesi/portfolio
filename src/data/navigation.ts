@@ -7,10 +7,10 @@ import type { NavItem } from '~/types';
  * `/`, the link jumps to that section instead of reloading the page.
  */
 export const primaryNav: NavItem[] = [
+  { label: 'Home', href: '/' },
   { label: 'Selected projects', href: '/work/', anchor: '#work' },
-  { label: 'Outcomes', href: '/#process', anchor: '#process' },
-  { label: 'Capabilities', href: '/#skills', anchor: '#skills' },
-  { label: 'Background', href: '/#about', anchor: '#about' },
+  { label: 'My Methodology', href: '/#method', anchor: '#method' },
+  { label: 'C.V.', href: '/#cv', anchor: '#cv' },
   { label: 'FAQ', href: '/#faq', anchor: '#faq' },
   { label: 'Contact', href: '/contact/' },
 ];
