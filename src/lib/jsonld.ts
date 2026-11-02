@@ -23,15 +23,24 @@ export function personSchema(site: SiteConfig): Json {
     '@type': 'Person',
     '@id': `${base}/#person`,
     name: site.author,
+    givenName: site.author.split(' ')[0],
+    familyName: site.author.split(' ').slice(1).join(' '),
     jobTitle: site.role,
     description: site.description,
     url: `${base}/`,
     image: new URL(site.ogImage, `${base}/`).href,
     email: `mailto:${site.contact.email}`,
+    telephone: site.contact.phoneHref,
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Milan',
+      addressLocality: site.contact.location.split(',')[0]?.trim() ?? 'Milan',
       addressCountry: 'IT',
+    },
+    hasOccupation: {
+      '@type': 'Occupation',
+      name: site.role,
+      occupationalCategory: site.role,
+      description: site.about,
     },
     knowsAbout: toolkit.map((item) => item.title),
     knowsLanguage: languages.map((item) => item.language),
@@ -74,7 +83,7 @@ export function blogPostingSchema(
     image: post.image,
     datePublished: post.datePublished,
     dateModified: post.dateModified ?? post.datePublished,
-    author: { '@type': 'Person', name: post.author, url: `${base}/` },
+    author: { '@id': `${base}/#person`, name: post.author, url: `${base}/` },
     publisher: { '@id': `${base}/#person` },
     mainEntityOfPage: { '@type': 'WebPage', '@id': post.url },
     inLanguage: site.locale,
@@ -113,7 +122,8 @@ export function webPageSchema(
 /** The About page, with the Person as its main entity. */
 export function profilePageSchema(
   site: SiteConfig,
-  page: { url: string; name: string; description: string }
+  page: { url: string; name: string; description: string },
+  options: { hasPart?: string } = {}
 ): Json {
   const base = origin(site);
   return {
@@ -125,6 +135,7 @@ export function profilePageSchema(
     inLanguage: site.locale,
     mainEntity: { '@id': `${base}/#person` },
     isPartOf: { '@id': `${base}/#website` },
+    ...(options.hasPart ? { hasPart: { '@id': options.hasPart } } : {}),
   };
 }
 
@@ -166,8 +177,16 @@ export function collectionPageSchema(
       itemListElement: items.map((item, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        name: item.name,
-        url: item.url,
+        /* `item` (not bare `url`) and the shared `#project` @id let
+           crawlers merge these entries with the CreativeWork nodes
+           emitted on the case-study pages. */
+        item: {
+          '@type': 'CreativeWork',
+          '@id': `${item.url}#project`,
+          name: item.name,
+          url: item.url,
+          creator: { '@id': `${base}/#person` },
+        },
       })),
     },
   };
@@ -183,6 +202,7 @@ export function projectSchema(
     image?: string;
     category?: string;
     keywords?: string[];
+    datePublished?: string;
   }
 ): Json {
   const base = origin(site);
@@ -192,10 +212,58 @@ export function projectSchema(
     name: project.title,
     description: project.description,
     url: project.url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': project.url },
     ...(project.image ? { image: new URL(project.image, `${base}/`).href } : {}),
     ...(project.category ? { genre: project.category } : {}),
     ...(project.keywords?.length ? { keywords: project.keywords.join(', ') } : {}),
+    ...(project.datePublished ? { datePublished: project.datePublished } : {}),
     creator: { '@id': `${base}/#person` },
+  };
+}
+
+/**
+ * "Selected works": an ItemList of CreativeWorks credited to the Person.
+ *
+ * Each item reuses the same `@id` (`<url>#project`) emitted by
+ * `projectSchema` on the case-study pages, so crawlers merge the two
+ * nodes into one entity. The list itself is referenced from the home
+ * `ProfilePage` through `hasPart`.
+ */
+export function worksItemListSchema(
+  site: SiteConfig,
+  items: {
+    title: string;
+    description: string;
+    url: string;
+    image?: string;
+    category?: string;
+    keywords?: string[];
+    datePublished?: string;
+  }[]
+): Json {
+  const base = origin(site);
+  return {
+    '@type': 'ItemList',
+    '@id': `${base}/#works`,
+    name: 'Selected works',
+    numberOfItems: items.length,
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'CreativeWork',
+        '@id': `${item.url}#project`,
+        name: item.title,
+        description: item.description,
+        url: item.url,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': item.url },
+        ...(item.image ? { image: new URL(item.image, `${base}/`).href } : {}),
+        ...(item.category ? { genre: item.category } : {}),
+        ...(item.keywords?.length ? { keywords: item.keywords.join(', ') } : {}),
+        ...(item.datePublished ? { datePublished: item.datePublished } : {}),
+        creator: { '@id': `${base}/#person` },
+      },
+    })),
   };
 }
 

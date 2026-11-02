@@ -11,9 +11,48 @@ import Faq from '~/components/home/Faq.astro';
 import Cta from '~/components/home/Cta.astro';
 import siteConfig from '~/config/site';
 import { faq } from '~/data/faq';
-import { faqPageSchema, graph, personSchema, websiteSchema } from '~/lib/jsonld';
+import { getCollection } from 'astro:content';
+import { isVisible } from '~/lib/utils';
+import {
+  faqPageSchema,
+  graph,
+  personSchema,
+  profilePageSchema,
+  websiteSchema,
+  worksItemListSchema,
+} from '~/lib/jsonld';
 
-const jsonLd = graph([personSchema(siteConfig), websiteSchema(siteConfig), faqPageSchema(faq)]);
+/* Same "featured" filter as Work.astro, so the rendered list and the
+   structured data always describe the same Selected Works. */
+const featured = (await getCollection('projects'))
+  .filter(isVisible)
+  .filter((p) => p.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const homeUrl = `${siteConfig.url}/`;
+
+const jsonLd = graph([
+  personSchema(siteConfig),
+  websiteSchema(siteConfig),
+  profilePageSchema(
+    siteConfig,
+    { url: homeUrl, name: siteConfig.title, description: siteConfig.description },
+    { hasPart: `${homeUrl}#works` }
+  ),
+  worksItemListSchema(
+    siteConfig,
+    featured.map((p) => ({
+      title: p.data.title,
+      description: p.data.description,
+      url: `${siteConfig.url}/work/${p.id}/`,
+      image: p.data.image?.src,
+      category: p.data.category,
+      keywords: [...p.data.services, ...p.data.technologies],
+      datePublished: p.data.year,
+    }))
+  ),
+  faqPageSchema(faq),
+]);
 ---
 
 <BaseLayout

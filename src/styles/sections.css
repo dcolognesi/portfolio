@@ -743,6 +743,8 @@
   border-radius: 0 0 10px 0;
   font-size: 22px;
   letter-spacing: 0.11em;
+  /* Soft halo under the tab so it separates from the section background. */
+  box-shadow: 0 14px 24px -16px rgba(16, 17, 16, 0.45);
 }
 
 /* Section titles: 3/4 of the previous title size, anchored top-left. */
@@ -760,7 +762,9 @@
   letter-spacing: -0.03em;
 }
 
-/* Alternating tinted sections on the homepage. */
+/* Alternating tinted panels on the homepage, starting at Selected
+   projects. Sections above keep the plain website background. Each
+   panel stays inside the central content column. */
 .home #work,
 .home #cv,
 .home #process,
@@ -772,12 +776,28 @@
   margin-inline: auto;
   padding-inline: clamp(20px, 3.2vw, 56px);
 }
-.home #work { background: var(--surface-a); }
-.home #cv { background: var(--surface-a); }
-.home #process { background: var(--surface-b); }
+/* Breathing room between the tinted panels. */
+.home #work,
+.home #cv,
+.home #faq,
+.home #contact {
+  margin-block: clamp(16px, 2.2vw, 30px);
+}
+.home #work {
+  background: var(--surface-sand);
+  border-radius: var(--r-lg);
+}
+.home #cv {
+  background: var(--surface-sand);
+  border-radius: var(--r-lg);
+}
+.home #faq {
+  background: var(--surface-sand);
+  border-radius: var(--r-lg);
+}
+.home #contact { background: var(--surface-cream); }
+.home #process,
 .home #about { background: var(--surface-b); }
-.home #faq { background: var(--surface-a); }
-.home #contact { background: var(--surface-a); }
 .home #process::before,
 .home #faq::before { display: none; }
 .kit-grid {
@@ -1240,7 +1260,7 @@
   margin-inline: auto;
   padding: clamp(52px, 5.4vw, 84px) clamp(20px, 3.2vw, 56px) clamp(38px, 4vw, 60px);
   background: var(--swp-ink);
-  border-radius: 0;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
 }
 .ftr-brand { display: inline-flex; align-items: center; margin-bottom: 18px; }
 .ftr-brand img { height: 46px; width: auto; }
@@ -1295,7 +1315,7 @@
   margin-inline: auto;
   padding: 24px clamp(20px, 3.2vw, 56px) 30px;
   background: var(--swp-ink);
-  border-radius: 0 0 var(--r-lg) var(--r-lg);
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1499,7 +1519,8 @@
   gap: clamp(18px, 2.4vw, 28px);
 }
 
-/* Nested sections lose their own shell: the accordion is the single box. */
+/* Nested sections lose their own shell: the accordion is the single box.
+   They take the accordion green at 30% transparency. */
 .method-body #about,
 .method-body #background,
 .method-body #process,
@@ -1508,7 +1529,7 @@
   max-width: none;
   margin-inline: 0;
   padding-inline: clamp(20px, 3.2vw, 56px);
-  background: var(--surface-b);
+  background: var(--surface-lime-soft);
   border-radius: var(--r-md);
 }
 .method-body .kit > .wrap { padding-inline: 0; }

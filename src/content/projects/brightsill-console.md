@@ -19,7 +19,7 @@ results:
     label: Median time to first successful deploy
   - value: '38'
     label: Components documented at handover
-featured: true
+featured: false
 order: 1
 draft: false
 ---

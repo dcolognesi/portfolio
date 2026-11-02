@@ -33,6 +33,9 @@ const { project, next } = Astro.props;
 const { Content } = await render(project);
 const d = project.data;
 
+/** The case-study hero can override the listing image. */
+const hero = d.hero ?? d.image;
+
 const projectUrl = `${siteConfig.url}/work/${project.id}/`;
 
 const jsonLd = graph([
@@ -41,9 +44,10 @@ const jsonLd = graph([
     title: d.title,
     description: d.description,
     url: projectUrl,
-    image: d.image?.src,
+    image: hero?.src,
     category: d.category,
     keywords: [...d.services, ...d.technologies],
+    datePublished: d.year,
   }),
   breadcrumbSchema([
     { name: 'Home', url: `${siteConfig.url}/` },
@@ -56,8 +60,8 @@ const jsonLd = graph([
 <BaseLayout
   title={d.title}
   description={d.description}
-  image={d.image?.src}
-  imageAlt={d.image?.alt}
+  image={hero?.src}
+  imageAlt={hero?.alt}
   jsonLd={jsonLd}
 >
   <article>
@@ -65,20 +69,20 @@ const jsonLd = graph([
       <div class="rev">
         <Breadcrumbs items={[{ label: 'Projects', href: '/work/' }, { label: d.title }]} />
         <p class="eyebrow">{d.category} &middot; {d.year}</p>
-        <h1 class="d1" style="font-size:clamp(38px,6.4vw,76px);margin:16px 0 20px">{d.title}</h1>
-        <p class="lead" style="max-width:58ch">{d.description}</p>
+        <h1 class="d1 case-title">{d.title}</h1>
+        <p class="lead case-lead">{d.description}</p>
       </div>
     </section>
 
     <section class="wrap" style="padding-bottom:var(--sec)">
-      <div class="case-media rev">
+      <div class:list={['case-media rev', hero?.fit === 'contain' && 'case-media-contain']}>
         {
-          d.image ? (
+          hero ? (
             <img
-              src={d.image.src}
-              alt={d.image.alt}
-              width={d.image.width}
-              height={d.image.height}
+              src={hero.src}
+              alt={hero.alt}
+              width={hero.width}
+              height={hero.height}
               fetchpriority="high"
               decoding="async"
             />

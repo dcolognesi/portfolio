@@ -5,11 +5,13 @@ import sitemap from '@astrojs/sitemap';
 /**
  * The canonical origin of the deployed site.
  *
- * Change `DEFAULT_SITE` (or set a `SITE_URL` environment variable at build time)
- * before deploying — it is used for canonical URLs, Open Graph tags, the
+ * On Cloudflare Pages, set a `SITE_URL` environment variable in
+ * Settings → Environment variables (build time) with the production
+ * domain, e.g. `https://www.dariocolognesi.it` — or simply replace
+ * `DEFAULT_SITE` below. It drives canonical URLs, Open Graph tags, the
  * sitemap, the RSS feed and robots.txt.
  */
-const DEFAULT_SITE = 'https://swp-freelancer-portfolio.vercel.app';
+const DEFAULT_SITE = 'https://portfolio.oceanmarketingitalia.workers.dev';
 
 export default defineConfig({
   site: process.env.SITE_URL ?? DEFAULT_SITE,
@@ -25,7 +27,13 @@ export default defineConfig({
   // HTML-aware compression so inline spacing in the markup is preserved.
   compressHTML: true,
 
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // The 404 route is built as a real page but must never be indexed
+      // or listed in the sitemap.
+      filter: (page) => !page.endsWith('/404/'),
+    }),
+  ],
 
   prefetch: {
     prefetchAll: true,

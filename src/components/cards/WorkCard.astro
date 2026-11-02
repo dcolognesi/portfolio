@@ -5,13 +5,15 @@ import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   project: CollectionEntry<'projects'>;
-  /** Cards above the fold can skip lazy loading. */
+  /** The first card can load with the initial viewport. */
   eager?: boolean;
   class?: string;
 }
 
 const { project, eager = false, class: className } = Astro.props;
-const { title, excerpt, year, category, image, artwork } = project.data;
+const { title, excerpt, year, category, image, hero, artwork } = project.data;
+/** Prefer the case-study hero for cards when one is defined. */
+const cardImage = hero ?? image;
 ---
 
 <a
@@ -22,14 +24,16 @@ const { title, excerpt, year, category, image, artwork } = project.data;
   <div class="work-media">
     <span class="work-year">{year}</span>
     {
-      image ? (
+      cardImage ? (
         <img
-          src={image.src}
-          alt={image.alt}
-          width={image.width}
-          height={image.height}
+          src={cardImage.src}
+          alt={cardImage.alt}
+          width={cardImage.width}
+          height={cardImage.height}
           loading={eager ? 'eager' : 'lazy'}
           decoding="async"
+          fetchpriority={eager ? 'high' : 'low'}
+          style={cardImage.position ? `object-position:${cardImage.position}` : undefined}
         />
       ) : artwork ? (
         <Artwork name={artwork} label={`${title} — project artwork`} />

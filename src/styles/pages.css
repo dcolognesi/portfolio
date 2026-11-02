@@ -10,6 +10,17 @@
 .phero-in { max-width: 62ch; }
 .phero h1 { margin: 16px 0 20px; }
 .phero .lead { max-width: 58ch; }
+.case-lead {
+  max-width: none;
+  text-align: center;
+  font-weight: 500;
+}
+@media (min-width: 1100px) {
+  .case-lead {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+}
 .phero-meta {
   display: flex;
   flex-wrap: wrap;
@@ -18,15 +29,37 @@
   margin-top: 26px;
 }
 
+/* ---- Case-study typography (shared by every project article) ---- */
+.case-title {
+  font-size: clamp(38px, 6.4vw, 76px);
+  margin: 16px 0 20px;
+}
+
 /* ---- Prose (markdown bodies) ------------------------------ */
 .prose { max-width: 68ch; font-size: 16.5px; line-height: 1.78; color: var(--swp-graphite); }
 .prose > * + * { margin-top: 1.15em; }
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: var(--swp-ink);
+  font-family: var(--font-display);
+  line-height: 1.15;
+}
+.prose h1 { font-size: clamp(28px, 3vw, 38px); letter-spacing: -0.03em; margin-top: 1.6em; }
 .prose h2 {
   font-size: clamp(22px, 2.4vw, 30px);
   letter-spacing: -0.026em;
   color: var(--swp-ink);
   margin-top: 1.9em;
   margin-bottom: 0.1em;
+  /* Marker-style highlight: a green block behind the text, not a rule. */
+  width: fit-content;
+  background: var(--swp-lime);
+  padding: 0.08em 0.3em 0.12em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 .prose h3 {
   font-size: clamp(18px, 1.8vw, 22px);
@@ -39,11 +72,13 @@
 .prose a:hover { color: var(--swp-slate); }
 .prose strong { font-weight: 700; color: var(--swp-ink); }
 .prose ul,
-.prose ol { padding-left: 1.3em; display: grid; gap: 0.5em; }
+.prose ol { padding-left: 2em; display: grid; gap: 0.5em; }
+.prose li ul,
+.prose li ol { padding-left: 1.5em; margin-top: 0.4em; }
 .prose ul { list-style: disc; }
 .prose ol { list-style: decimal; }
-.prose li::marker { color: var(--swp-lime-deep); }
-.prose ol li::marker { color: var(--swp-slate); font-family: var(--font-display); font-weight: 600; }
+.prose li::marker { color: var(--swp-lime-deep); font-weight: 700; }
+.prose ol li::marker { color: var(--swp-slate); font-family: var(--font-display); font-weight: 700; }
 .prose blockquote {
   margin: 1.6em 0;
   padding: 4px 0 4px 22px;
@@ -69,6 +104,52 @@
 }
 .prose pre code { background: none; padding: 0; font-size: inherit; color: inherit; }
 .prose img { border-radius: var(--r-md); }
+.prose figure { margin: 1.8em 0; }
+.prose .case-figure-link {
+  display: block;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: var(--swp-mist);
+  box-shadow: inset 0 0 0 1px var(--swp-line);
+  transition: box-shadow 0.3s var(--ease);
+}
+.prose .case-figure-link:hover { box-shadow: inset 0 0 0 1px var(--swp-ink); }
+.prose .case-figure-link:focus-visible { outline-offset: 3px; }
+.prose .case-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+.prose figcaption {
+  margin-top: 10px;
+  font-size: 13.4px;
+  line-height: 1.55;
+  color: var(--swp-slate);
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.6px;
+  line-height: 1.55;
+}
+.prose th,
+.prose td {
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--swp-line);
+}
+.prose th {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--swp-slate);
+  background: var(--swp-mist);
+}
+.prose tr:last-child td { border-bottom: 0; }
 .prose hr { border: 0; border-top: 1px solid var(--swp-line); margin: 2.4em 0; }
 
 /* ---- Case study ------------------------------------------- */
@@ -81,12 +162,22 @@
 }
 .case-media img,
 .case-media svg { width: 100%; height: 100%; object-fit: cover; }
+.case-media-contain { aspect-ratio: auto; }
+.case-media-contain img { height: auto; object-fit: contain; }
 
 .case-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
-  gap: clamp(30px, 4.4vw, 68px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 270px);
+  gap: clamp(28px, 3.6vw, 52px);
   align-items: start;
+}
+.case-grid .prose { max-width: 100%; }
+.case-grid .prose p,
+.case-grid .prose li {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
 }
 .case-aside {
   display: grid;

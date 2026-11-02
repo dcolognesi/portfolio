@@ -20,9 +20,14 @@
   /* Status */
   --swp-live: #3fa34d;
 
-  /* Alternating section surfaces */
+  /* Alternating section surfaces: the light panels match the site
+     background, the darker ones a muted brown from the template palette. */
   --surface-a: #fafbf8;
   --surface-b: #f2f3ef;
+  --surface-cream: var(--swp-shell);
+  --surface-sand: rgba(201, 189, 169, 0.8);
+  /* Accordion green at 80% transparency (20% opacity). */
+  --surface-lime-soft: rgba(200, 241, 77, 0.2);
 
   /* Typography */
   --font-display: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;

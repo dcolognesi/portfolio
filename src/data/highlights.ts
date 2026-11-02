@@ -14,7 +14,7 @@ export const hero = {
   secondaryLabel: 'View CV',
   secondaryHref: '#cv',
   photo: {
-    src: '/images/colognesi-dario-light.jpeg',
+    src: '/images/colognesi-dario-light.webp',
     alt: 'Portrait of Dario Colognesi',
     width: 1280,
     height: 854,
@@ -39,13 +39,13 @@ export const collaborate = {
   ctaHref: '/contact/',
   images: [
     {
-      src: '/images/distrust-2.jpeg',
+      src: '/images/distrust-2.webp',
       alt: 'Two colleagues reviewing printed charts and analytics reports at a table',
       width: 640,
       height: 427,
     },
     {
-      src: '/images/distrust 1.1.jpeg',
+      src: '/images/distrust 1.1.webp',
       alt: 'Two people reviewing a printed analytics report with charts',
       width: 640,
       height: 427,
@@ -63,7 +63,7 @@ export const about = {
     'If the metric cannot be trusted, I say so before it reaches a board deck.',
   ],
   image: {
-    src: '/images/messy_data_2.jpeg',
+    src: '/images/messy_data_2.webp',
     alt: 'Messy data spreadsheets and charts across a desk',
     width: 640,
     height: 424,
@@ -85,7 +85,7 @@ export const servicesHeading = {
 
 export const workHeading = {
   eyebrow: 'Selected projects',
-  title: 'A documented analytics project.',
+  title: 'Documented analytics and product work.',
 };
 
 export const journalHeading = {

@@ -41,7 +41,7 @@ const jsonLd = graph([
   title="Projects"
   heading="Selected projects."
   eyebrow="Work"
-  intro="A small selection of documented work. The current case study is a portfolio demo built with synthetic data and labelled as such."
+  intro="A small selection of documented work, including a production-used AI visibility platform, a web analytics dashboard case study and a synthetic analytics demo."
   description="Selected analytics and SEO projects by Dario Colognesi."
   crumbs={[{ label: 'Projects' }]}
   jsonLd={jsonLd}
@@ -67,7 +67,7 @@ const jsonLd = graph([
         projects.map((project, i) => (
           <WorkCard
             project={project}
-            eager={i < 2}
+            eager={i === 0}
             class:list={['rev', i % 3 > 0 && `rev-d${i % 3}`]}
           />
         ))

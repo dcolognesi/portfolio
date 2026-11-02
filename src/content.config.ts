@@ -11,6 +11,10 @@ const imageRef = z.object({
   alt: z.string(),
   width: z.number().int().positive(),
   height: z.number().int().positive(),
+  /** `contain` keeps wide interface screenshots fully visible. */
+  fit: z.enum(['cover', 'contain']).optional(),
+  /** CSS object-position, e.g. `left center`. */
+  position: z.string().optional(),
 });
 
 /**
@@ -33,6 +37,8 @@ const projects = defineCollection({
     /** Meta description for the case-study page. */
     description: z.string(),
     image: imageRef.optional(),
+    /** Optional hero override for the case-study page. */
+    hero: imageRef.optional(),
     artwork: z.enum(['identity', 'dashboard', 'app-screens']).optional(),
     services: z.array(z.string()).default([]),
     technologies: z.array(z.string()).default([]),

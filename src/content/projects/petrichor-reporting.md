@@ -15,7 +15,7 @@ results:
     label: Saved per person, per week
   - value: 'AA'
     label: Contrast on every chart series
-featured: true
+featured: false
 order: 4
 draft: false
 ---

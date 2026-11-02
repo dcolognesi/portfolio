@@ -16,7 +16,7 @@ results:
   - value: 'SQL + Python'
     label: Modelling and automation
 featured: true
-order: 0
+order: 2
 ---
 
 ## Demo notice

@@ -17,6 +17,10 @@ interface Props {
   noindex?: boolean;
   /** Set false on the homepage, where the title already reads well alone. */
   appendSiteName?: boolean;
+  /** Twitter/X handle of the site, e.g. `@dcolognesi`. */
+  twitterSite?: string;
+  /** Twitter/X handle of the author, e.g. `@dcolognesi`. */
+  twitterCreator?: string;
   /** Pre-serialised JSON-LD, produced by the helpers in `src/lib/jsonld.ts`. */
   jsonLd?: string;
 }
@@ -32,10 +36,13 @@ const {
   modifiedTime,
   noindex = false,
   appendSiteName = true,
+  twitterSite,
+  twitterCreator,
   jsonLd,
 } = Astro.props;
 
 const fullTitle = appendSiteName ? `${title} — ${siteConfig.name}` : title;
+const [firstName, ...restName] = siteConfig.author.split(' ');
 /* Open Graph wants `language_TERRITORY`; <html lang> keeps the BCP-47 tag. */
 const ogLocale = siteConfig.locale === 'en' ? 'en_US' : siteConfig.locale.replace('-', '_');
 const href = canonical ?? canonicalUrl(Astro.url, Astro.site);
@@ -71,6 +78,13 @@ const defaultImage = image === siteConfig.ogImage;
 )}
 <meta property="og:image:alt" content={imageAlt ?? `${siteConfig.name} — ${siteConfig.role}`} />
 <meta property="og:locale" content={ogLocale} />
+{type === 'profile' && (
+  <>
+    <meta property="og:profile:first_name" content={firstName} />
+    <meta property="og:profile:last_name" content={restName.join(' ')} />
+    <meta property="og:profile:username" content={siteConfig.author} />
+  </>
+)}
 {publishedTime && <meta property="article:published_time" content={publishedTime} />}
 {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 
@@ -79,5 +93,7 @@ const defaultImage = image === siteConfig.ogImage;
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
 <meta name="twitter:image:alt" content={imageAlt ?? `${siteConfig.name} — ${siteConfig.role}`} />
+{twitterSite && <meta name="twitter:site" content={twitterSite} />}
+{twitterCreator && <meta name="twitter:creator" content={twitterCreator} />}
 
 {jsonLd && <script type="application/ld+json" is:inline set:html={jsonLd} />}
