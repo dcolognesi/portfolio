@@ -32,8 +32,6 @@ cropped to the aspect ratio the layout needs and re-encoded as WebP.
 
 | File | Used for | Source |
 | --- | --- | --- |
-| `public/images/hero-portrait.webp` | Hero portrait card | [pxhere.com/en/photo/868205](https://pxhere.com/en/photo/868205) |
-| `public/images/about-studio.webp` | About (Background) section | [pxhere.com/en/photo/764675](https://pxhere.com/en/photo/764675) |
 | `public/images/reel-poster.webp` | Studio reel poster frame; journal post cover | [pxhere.com/en/photo/764428](https://pxhere.com/en/photo/764428) |
 | `public/images/project-console.webp` | Case study: Brightsill console | [pxhere.com/en/photo/758989](https://pxhere.com/en/photo/758989) |
 | `public/images/project-site.webp` | Case study: Coalfield site; journal post cover | [pxhere.com/en/photo/1338927](https://pxhere.com/en/photo/1338927) |
@@ -44,24 +42,6 @@ cropped to the aspect ratio the layout needs and re-encoded as WebP.
 | `public/images/journal-01.webp` | Journal post cover | [pxhere.com/en/photo/7630](https://pxhere.com/en/photo/7630) |
 | `public/images/journal-02.webp` | Journal post cover | [pxhere.com/en/photo/1338928](https://pxhere.com/en/photo/1338928) |
 | `public/images/journal-03.webp` | Journal post cover | [pxhere.com/en/photo/559565](https://pxhere.com/en/photo/559565) |
-
-### StockSnap (2 photographs)
-
-[StockSnap](https://stocksnap.io/)'s [licence page](https://stocksnap.io/license)
-states that every image on the site is released under CC0:
-
-> [You] can put StockSnap CC0 images to any of these usages without buying the
-> right to do it, acquiring written permission from the image's creator, or
-> attributing the work to the image creator.
-
-Both were contributed by the photographer **directmedia**.
-
-| File | Used for | Source |
-| --- | --- | --- |
-| `public/images/collab-team.webp` | "Working together" section, left image | [stocksnap.io/photo/business-people-HXDODYZKFS](https://stocksnap.io/photo/business-people-HXDODYZKFS) |
-| `public/images/collab-meeting.webp` | "Working together" section, right image | [stocksnap.io/photo/business-people-HWLNQD65VR](https://stocksnap.io/photo/business-people-HWLNQD65VR) |
-
-Both were cropped and re-encoded as WebP for this theme.
 
 ## Brand logos
 
@@ -124,7 +104,7 @@ no icon-library dependency.
 | Project artwork (identity, dashboard, app screens) | `src/components/art/IdentityArt.astro`, `DashboardArt.astro`, `AppScreensArt.astro` |
 | Signature mark | `src/components/art/Signature.astro` |
 | Client wordmarks | `src/data/clients.ts` (inline SVG, fictional companies) |
-| Monogram, favicon, app icons, OG image | `public/favicon.svg`, `public/apple-touch-icon.png`, `public/icon-192.png`, `public/icon-512.png`, `public/og-default.png` |
+| Monogram, favicon, app icons, OG image | `public/favicon.svg`, `public/apple-touch-icon.png`, `public/icon-192.png`, `public/icon-512.png` |
 | README preview screenshot | `public/preview.png` (a render of this theme) |
 
 All of it is MIT along with the rest of the theme: use it, change it, ship it.

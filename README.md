@@ -111,7 +111,6 @@ npm run sync       # regenerate content collection types
 │   ├── fonts/              # self-hosted WOFF2 + OFL licence texts
 │   ├── images/             # optimised WebP photographs
 │   ├── favicon.svg         # monogram
-│   ├── og-default.png      # fallback social card
 │   └── site.webmanifest
 └── src/
     ├── config/site.ts      # ← start here

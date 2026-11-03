@@ -42,6 +42,15 @@ const { bodyClass, ...seo } = Astro.props;
     <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin />
 
+    <!-- Google Tag Manager -->
+    <script is:inline async src="https://www.googletagmanager.com/gtm.js?id=GTM-THMWPMWL"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script>
+    <!-- End Google Tag Manager -->
+
     <!-- Marks the document as scripted before first paint, so progressive
          enhancements (scroll reveal, the nav drawer) never flash. -->
     <script is:inline>
@@ -61,6 +70,18 @@ const { bodyClass, ...seo } = Astro.props;
   </head>
 
   <body class={bodyClass}>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-THMWPMWL"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+        title="Google Tag Manager"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <a class="skip-link" href="#main">Skip to content</a>
     <IconSprite />
 
