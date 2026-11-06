@@ -4,8 +4,6 @@
  * collection instead.
  */
 
-import { emailHref } from '~/lib/utils';
-
 export const hero = {
   /** Rendered on two lines. */
   nameLines: ['Dario', 'Colognesi'],
@@ -38,7 +36,7 @@ export const collaborate = {
   title: 'Most of my work starts with numbers nobody trusts.',
   body: 'A dashboard that disagrees with the CRM, tracking that lost half the funnel, or a report that takes three days to rebuild. Send me the mess and I will tell you what I would fix first — before there is any question of an invoice. If it is not a fit, I will name someone who is.',
   ctaLabel: 'Email me',
-  ctaHref: emailHref,
+  ctaHref: '/contact/',
   images: [
     {
       src: '/images/distrust-2.webp',
@@ -82,7 +80,7 @@ export const servicesHeading = {
   eyebrow: 'Capabilities',
   title: 'Four areas of work.',
   ctaLabel: 'Email me',
-  ctaHref: emailHref,
+  ctaHref: '/contact/',
 };
 
 export const workHeading = {
@@ -101,5 +99,5 @@ export const cta = {
   title: 'Have a measurement problem worth fixing?',
   body: 'Share the context, the decision you need to support and any deadline. I will reply with questions and a concrete next step.',
   primaryLabel: 'Email me',
-  primaryHref: emailHref,
+  primaryHref: '/contact/',
 };

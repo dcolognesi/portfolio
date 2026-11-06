@@ -1,7 +1,6 @@
 ---
 import Icon from '../Icon.astro';
 import Button from '../Button.astro';
-import { emailHref } from '~/lib/utils';
 import { faq, faqHeading } from '~/data/faq';
 
 interface Props {
@@ -22,7 +21,7 @@ const { headingLevel: Heading = 'h2', id = 'faq', class: className } = Astro.pro
       <div class="faq-aside">
         <h2>{faqHeading.asideTitle}</h2>
         <p>{faqHeading.asideBody}</p>
-        <Button href={emailHref} variant="ink" icon="mail">Email me</Button>
+        <Button href="/contact/" variant="ink" icon="mail">Email me</Button>
       </div>
     </div>
 

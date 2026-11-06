@@ -1,7 +1,6 @@
 ---
 import Icon from './Icon.astro';
 import Button from './Button.astro';
-import { emailHref } from '~/lib/utils';
 import { primaryNav, mobileExtraNav } from '~/data/navigation';
 
 const path = Astro.url.pathname;
@@ -44,7 +43,7 @@ function target(href: string, anchor?: string) {
       }
     </nav>
 
-    <Button href={emailHref} variant="ink" icon="mail" class="hdr-cta">Email me</Button>
+    <Button href="/contact/" variant="ink" icon="mail" class="hdr-cta">Email me</Button>
 
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">
       <Icon name="menu" />
@@ -64,7 +63,7 @@ function target(href: string, anchor?: string) {
         })
       }
     </nav>
-    <Button href={emailHref} variant="ink" icon="mail">Email me</Button>
+    <Button href="/contact/" variant="ink" icon="mail">Email me</Button>
   </div>
 </header>
 
