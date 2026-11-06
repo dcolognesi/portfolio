@@ -4,9 +4,9 @@
   "compatibility_date": "2026-11-01",
   "compatibility_flags": ["nodejs_compat"],
   "vars": {
+    "CONTACT_FROM_EMAIL": "dario@dariocolognesi.it",
     "CONTACT_TO_EMAIL": "dario.colognesi@gmail.com"
-    // RESEND_API_KEY e CONTACT_FROM_EMAIL vanno aggiunti come secret,
-    // non come vars in chiaro.
+    // RESEND_API_KEY va aggiunta come secret, non come var in chiaro.
   },
   "observability": {
     "enabled": true
