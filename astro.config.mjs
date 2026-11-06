@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import astroNoEmail from 'astro-noemail';
 
 /**
  * The canonical origin of the deployed site.
@@ -33,6 +34,9 @@ export default defineConfig({
       // or listed in the sitemap.
       filter: (page) => !page.endsWith('/404/'),
     }),
+    // Obfuscate email addresses in the generated HTML so scrapers cannot
+    // harvest them. The site is fully static, so SSR rewriting is off.
+    astroNoEmail({ ssr: false }),
   ],
 
   prefetch: {

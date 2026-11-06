@@ -1231,10 +1231,29 @@
   border-radius: var(--r-lg);
   padding: clamp(26px, 2.6vw, 36px);
 }
+.contact-page .faq-aside { background: var(--swp-lime); }
+.contact-page .faq-aside h2,
+.contact-page .faq-aside p { color: var(--swp-ink); }
 .faq-aside h2 { font-size: 23px; margin-bottom: 12px; letter-spacing: -0.026em; }
 .faq-aside p { font-size: 14.8px; color: var(--swp-slate); margin-bottom: 24px; }
 
 @media (max-width: 880px) { .faq-grid { grid-template-columns: 1fr; } }
+
+/* Contact page: use the same centred content column as the homepage
+   sections, so the FAQ label sits inside the column, not at the viewport
+   edge. The original FAQ layout (two columns, pinned eyebrow) is kept. */
+.contact-page .phero,
+.contact-page .contact-section,
+.contact-page .faq-narrow {
+  width: calc(100% - 2 * var(--pad));
+  max-width: var(--content);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 3.2vw, 56px);
+}
+.contact-page .faq-narrow.sec-top::before {
+  left: clamp(20px, 3.2vw, 56px);
+  right: clamp(20px, 3.2vw, 56px);
+}
 
 /* ============================================================
    15. CTA

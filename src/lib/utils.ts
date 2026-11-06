@@ -1,5 +1,18 @@
 /** Small helpers shared across pages and components. */
 
+import siteConfig from '~/config/site';
+
+/**
+ * Compose link for the configured contact address.
+ *
+ * A plain `mailto:` does nothing on machines without a default mail app, so
+ * the link opens Gmail's compose window instead. Change this one line to
+ * `mailto:${siteConfig.contact.email}` if you prefer the visitor's client.
+ */
+export const emailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+  siteConfig.contact.email
+)}`;
+
 /** Resolve a site-relative path against the configured `site` origin. */
 export function absoluteUrl(path: string, site: URL | undefined): string {
   const origin = site ?? new URL('http://localhost:4321');

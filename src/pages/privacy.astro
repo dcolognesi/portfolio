@@ -1,6 +1,7 @@
 ---
 import PageLayout from '~/layouts/PageLayout.astro';
 import siteConfig from '~/config/site';
+import { emailHref } from '~/lib/utils';
 import { breadcrumbSchema, graph, webPageSchema, websiteSchema } from '~/lib/jsonld';
 
 const updated = 'Last updated: October 2026.';
@@ -60,7 +61,7 @@ const jsonLd = graph([
       <h2>Getting in touch</h2>
       <p>
         Questions about this page can go to
-        <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>.
+        <a href={emailHref} target="_blank" rel="noopener noreferrer">{siteConfig.contact.email}</a>.
       </p>
 
       <p class="mini muted">{updated}</p>

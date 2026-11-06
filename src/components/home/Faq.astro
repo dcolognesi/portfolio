@@ -1,18 +1,19 @@
 ---
 import Icon from '../Icon.astro';
 import Button from '../Button.astro';
-import siteConfig from '~/config/site';
+import { emailHref } from '~/lib/utils';
 import { faq, faqHeading } from '~/data/faq';
 
 interface Props {
   headingLevel?: 'h1' | 'h2';
   id?: string;
+  class?: string;
 }
 
-const { headingLevel: Heading = 'h2', id = 'faq' } = Astro.props;
+const { headingLevel: Heading = 'h2', id = 'faq', class: className } = Astro.props;
 ---
 
-<section class="wrap sec sec-top" id={id} aria-labelledby="faq-h">
+<section class:list={['wrap sec sec-top', className]} id={id} aria-labelledby="faq-h">
   <div class="faq-grid">
     <div class="rev">
       <p class="eyebrow">{faqHeading.eyebrow}</p>
@@ -21,7 +22,7 @@ const { headingLevel: Heading = 'h2', id = 'faq' } = Astro.props;
       <div class="faq-aside">
         <h2>{faqHeading.asideTitle}</h2>
         <p>{faqHeading.asideBody}</p>
-        <Button href={`mailto:${siteConfig.contact.email}`} variant="ink" icon="mail">Write to me</Button>
+        <Button href={emailHref} variant="ink" icon="mail">Email me</Button>
       </div>
     </div>
 

@@ -1,6 +1,7 @@
 ---
 import PageLayout from '~/layouts/PageLayout.astro';
 import siteConfig from '~/config/site';
+import { emailHref } from '~/lib/utils';
 import { breadcrumbSchema, graph, webPageSchema, websiteSchema } from '~/lib/jsonld';
 
 const termsUrl = `${siteConfig.url}/terms/`;
@@ -64,7 +65,7 @@ const jsonLd = graph([
 
       <h2>Questions</h2>
       <p>
-        Send them to <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>.
+        Send them to <a href={emailHref} target="_blank" rel="noopener noreferrer">{siteConfig.contact.email}</a>.
       </p>
     </div>
   </section>

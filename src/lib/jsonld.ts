@@ -29,7 +29,6 @@ export function personSchema(site: SiteConfig): Json {
     description: site.description,
     url: `${base}/`,
     image: new URL(site.ogImage, `${base}/`).href,
-    email: `mailto:${site.contact.email}`,
     telephone: site.contact.phoneHref,
     address: {
       '@type': 'PostalAddress',

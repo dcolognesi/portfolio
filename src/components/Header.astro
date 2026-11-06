@@ -1,12 +1,11 @@
 ---
 import Icon from './Icon.astro';
 import Button from './Button.astro';
-import siteConfig from '~/config/site';
+import { emailHref } from '~/lib/utils';
 import { primaryNav, mobileExtraNav } from '~/data/navigation';
 
 const path = Astro.url.pathname;
 const isHome = path === '/' || path === '';
-const contactHref = `mailto:${siteConfig.contact.email}`;
 
 /** Exact match gets `aria-current="page"`; an ancestor section is only styled. */
 function state(href: string) {
@@ -45,7 +44,7 @@ function target(href: string, anchor?: string) {
       }
     </nav>
 
-    <Button href={contactHref} variant="ink" icon="mail" class="hdr-cta">Write to me</Button>
+    <Button href={emailHref} variant="ink" icon="mail" class="hdr-cta">Email me</Button>
 
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">
       <Icon name="menu" />
@@ -65,7 +64,7 @@ function target(href: string, anchor?: string) {
         })
       }
     </nav>
-    <Button href={contactHref} variant="ink" icon="mail">Write to me</Button>
+    <Button href={emailHref} variant="ink" icon="mail">Email me</Button>
   </div>
 </header>
 

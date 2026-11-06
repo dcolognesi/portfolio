@@ -5,6 +5,7 @@ import Icon from '~/components/Icon.astro';
 import PhoneReveal from '~/components/PhoneReveal.astro';
 import Faq from '~/components/home/Faq.astro';
 import siteConfig from '~/config/site';
+import { emailHref } from '~/lib/utils';
 import { faq } from '~/data/faq';
 import {
   breadcrumbSchema,
@@ -38,10 +39,15 @@ const jsonLd = graph([
   eyebrow="Contact"
   intro="Share the context, the decision you need to support and any deadline. A short note is enough to start."
   description={contactDescription}
-  crumbs={[{ label: 'Contact' }]}
   jsonLd={jsonLd}
+  bodyClass="contact-page"
 >
-  <section class="wrap sec" style="padding-top:0" aria-labelledby="contact-h">
+  <Fragment slot="header-extra">
+    <div class="contact-hero-media">
+      <img src="/images/reel-poster.webp" alt="Dario Colognesi showreel" loading="lazy" decoding="async" />
+    </div>
+  </Fragment>
+  <section class="wrap sec contact-section" style="padding-top:0" aria-labelledby="contact-h">
     <div class="contact-grid">
       <div class="rev">
         <h2 class="d3" id="contact-h" style="margin-bottom:24px">Start with the question</h2>
@@ -50,14 +56,14 @@ const jsonLd = graph([
           output should support. Email is the quickest route.
         </p>
         <div style="margin-top:26px">
-          <Button href={`mailto:${siteConfig.contact.email}`} variant="ink" icon="mail">
+          <Button href={emailHref} variant="ink" icon="mail">
             Email me
           </Button>
         </div>
       </div>
 
       <div class="contact-aside rev rev-d1">
-        <a class="contact-card" href={`mailto:${siteConfig.contact.email}`}>
+        <a class="contact-card" href={emailHref} target="_blank" rel="noopener noreferrer">
           <i><Icon name="mail" /></i>
           <div>
             <b>Email</b>
@@ -89,5 +95,5 @@ const jsonLd = graph([
     </div>
   </section>
 
-  <Faq />
+  <Faq class="faq-narrow" />
 </PageLayout>

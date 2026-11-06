@@ -2,6 +2,7 @@
 import Icon from './Icon.astro';
 import PhoneReveal from './PhoneReveal.astro';
 import siteConfig from '~/config/site';
+import { emailHref } from '~/lib/utils';
 import { footerNav } from '~/data/navigation';
 
 const year = new Date().getFullYear();
@@ -36,7 +37,7 @@ const year = new Date().getFullYear();
       <h2>Get in touch</h2>
       <div class="ftr-cbox">
         <Icon name="mail" class="ic-sm" />
-        <span><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></span>
+        <span><a href={emailHref} target="_blank" rel="noopener noreferrer">{siteConfig.contact.email}</a></span>
       </div>
       <div class="ftr-cbox">
         <Icon name="phone" class="ic-sm" />
