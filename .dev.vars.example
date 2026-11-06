@@ -1,0 +1,5 @@
+# Cloudflare local development variables (wrangler / astro dev).
+# Copy this file to `.dev.vars` and fill in the real values.
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxx
+CONTACT_TO_EMAIL=oceanmarketingitalia@gmail.com
+CONTACT_FROM_EMAIL=Portfolio Contact <onboarding@resend.dev>

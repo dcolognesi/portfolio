@@ -349,10 +349,11 @@
 /* ---- Contact ---------------------------------------------- */
 .contact-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.78fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(30px, 4.4vw, 68px);
   align-items: start;
 }
+.contact-form { max-width: 720px; margin-top: 26px; }
 .form { display: grid; gap: 18px; }
 .field { display: grid; gap: 8px; }
 .field > label {
@@ -397,6 +398,29 @@
 }
 .form-note code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92em; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-status {
+  display: none;
+  font-size: 14px;
+  line-height: 1.6;
+  border-radius: var(--r-sm);
+  padding: 12px 15px;
+}
+.form-status:not(:empty) { display: block; }
+.form-status.is-loading {
+  color: var(--swp-slate);
+  background: var(--swp-mist);
+  border-left: 3px solid var(--swp-slate);
+}
+.form-status.is-success {
+  color: var(--swp-ink);
+  background: var(--swp-lime);
+  border-left: 3px solid var(--swp-ink);
+}
+.form-status.is-error {
+  color: #7a1d1d;
+  background: #fdecec;
+  border-left: 3px solid #b42323;
+}
 
 .contact-aside { display: grid; gap: 14px; }
 .contact-card {

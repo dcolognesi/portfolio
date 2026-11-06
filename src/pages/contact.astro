@@ -1,11 +1,9 @@
 ---
+export const prerender = true;
 import PageLayout from '~/layouts/PageLayout.astro';
-import Button from '~/components/Button.astro';
-import Icon from '~/components/Icon.astro';
-import PhoneReveal from '~/components/PhoneReveal.astro';
+import ContactForm from '~/components/ContactForm.astro';
 import Faq from '~/components/home/Faq.astro';
 import siteConfig from '~/config/site';
-import { emailHref } from '~/lib/utils';
 import { faq } from '~/data/faq';
 import {
   breadcrumbSchema,
@@ -55,42 +53,7 @@ const jsonLd = graph([
           Tell me what you need to measure, which systems are involved and what decision the
           output should support. Email is the quickest route.
         </p>
-        <div style="margin-top:26px">
-          <Button href={emailHref} variant="ink" icon="mail">
-            Email me
-          </Button>
-        </div>
-      </div>
-
-      <div class="contact-aside rev rev-d1">
-        <a class="contact-card" href={emailHref} target="_blank" rel="noopener noreferrer">
-          <i><Icon name="mail" /></i>
-          <div>
-            <b>Email</b>
-            <span>{siteConfig.contact.email}</span>
-          </div>
-        </a>
-        <div class="contact-card">
-          <i><Icon name="phone" /></i>
-          <div>
-            <b>Phone</b>
-            <PhoneReveal />
-          </div>
-        </div>
-        <div class="contact-card">
-          <i><Icon name="pin" /></i>
-          <div>
-            <b>Where</b>
-            <span>{siteConfig.contact.location}</span>
-          </div>
-        </div>
-        <div class="contact-card">
-          <i><Icon name="spark" /></i>
-          <div>
-            <b>Availability</b>
-            <span>{siteConfig.contact.availability}</span>
-          </div>
-        </div>
+        <ContactForm />
       </div>
     </div>
   </section>

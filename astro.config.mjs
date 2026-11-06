@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import astroNoEmail from 'astro-noemail';
+import cloudflare from '@astrojs/cloudflare';
 
 /**
  * The canonical origin of the deployed site.
@@ -20,7 +21,11 @@ export default defineConfig({
   // `base: '/repo-name'` is required for project pages on GitHub Pages.
   // base: '/swp-freelancer-portfolio',
 
-  output: 'static',
+  // The site is deployed to Cloudflare Pages/Workers. `output: 'server'`
+  // enables on-demand routes (the `/api/contact` endpoint). Every page that
+  // should stay static opts in with `export const prerender = true`.
+  output: 'server',
+  adapter: cloudflare(),
   trailingSlash: 'always',
   build: { format: 'directory' },
 
