@@ -162,7 +162,19 @@
 }
 .case-media img,
 .case-media svg { width: 100%; height: 100%; object-fit: cover; }
+.case-media a[data-image-zoom-generated] {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+}
+.case-media a[data-image-zoom-generated]:focus-visible { outline: none; }
+.case-media a[data-image-zoom-generated]:focus-visible img {
+  outline: 2px solid var(--swp-ink);
+  outline-offset: -4px;
+}
 .case-media-contain { aspect-ratio: auto; }
+.case-media-contain a[data-image-zoom-generated] { height: auto; }
 .case-media-contain img { height: auto; object-fit: contain; }
 
 .case-grid {

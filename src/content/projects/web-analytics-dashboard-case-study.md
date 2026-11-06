@@ -33,7 +33,7 @@ The goal was to help the client explore digital performance through clear summar
 ### Traffic Overview, Devices, and Acquisition Channels
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/traffic-overview.webp" target="_blank" rel="noopener" aria-label="Open the traffic overview screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/traffic-overview.webp" data-image-zoom aria-label="Open the traffic overview screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/traffic-overview.webp" alt="Traffic overview with users, sessions, page views, a session trend line and device, weekday and channel breakdowns" width="1732" height="1126" loading="lazy" decoding="async" />
   </a>
   <figcaption>Traffic overview with device, weekday and acquisition-channel breakdowns.</figcaption>
@@ -44,7 +44,7 @@ This overview brings together users, sessions, page views, and traffic trends. D
 ### Page Performance and Visitor Geography
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/page-performance-geography.webp" target="_blank" rel="noopener" aria-label="Open the page performance and visitor geography screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/page-performance-geography.webp" data-image-zoom aria-label="Open the page performance and visitor geography screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/page-performance-geography.webp" alt="Page-level performance table beside maps of visitor locations in Europe and Italy" width="1731" height="1123" loading="lazy" decoding="async" />
   </a>
   <figcaption>Page-level metrics combined with visitor geography.</figcaption>
@@ -55,7 +55,7 @@ This view combines page-level metrics with maps of visitor locations across Euro
 ### Geographic Traffic and Referral Sources
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/geographic-referral.webp" target="_blank" rel="noopener" aria-label="Open the geographic traffic and referral sources screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/geographic-referral.webp" data-image-zoom aria-label="Open the geographic traffic and referral sources screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/geographic-referral.webp" alt="Regional and city filters with referral traffic tables and a device-by-day breakdown" width="1729" height="1120" loading="lazy" decoding="async" />
   </a>
   <figcaption>Regional filters, referral sources and device-by-day patterns.</figcaption>
@@ -68,7 +68,7 @@ Regional and city filters make it possible to explore geographic differences in 
 ### Google Search Console: Queries, Clicks, and Landing Pages
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/search-console.webp" target="_blank" rel="noopener" aria-label="Open the Search Console screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/search-console.webp" data-image-zoom aria-label="Open the Search Console screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/search-console.webp" alt="Search Console report with impressions, clicks, CTR, average position, query and landing-page tables, and trend charts" width="1728" height="1128" loading="lazy" decoding="async" />
   </a>
   <figcaption>Search Console queries, landing pages and click trends.</figcaption>
@@ -79,7 +79,7 @@ The Search Console view connects search visibility with clicks to the website. I
 ### Keyword Rankings and Landing-Page Monitoring
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/keyword-rankings.webp" target="_blank" rel="noopener" aria-label="Open the keyword rankings screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/keyword-rankings.webp" data-image-zoom aria-label="Open the keyword rankings screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/keyword-rankings.webp" alt="Keyword ranking report linking tracked keywords to landing pages, positions, position changes and search volumes" width="1707" height="1122" loading="lazy" decoding="async" />
   </a>
   <figcaption>Tracked keywords, landing pages and ranking movements.</figcaption>
@@ -90,7 +90,7 @@ This report links monitored keywords to their landing pages, ranking positions, 
 ### Organic Visibility and Traffic Trends
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/organic-visibility-trends.webp" target="_blank" rel="noopener" aria-label="Open the organic visibility trends screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/organic-visibility-trends.webp" data-image-zoom aria-label="Open the organic visibility trends screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/organic-visibility-trends.webp" alt="Monthly charts showing keyword coverage, ranking distribution and organic traffic trends" width="1729" height="1124" loading="lazy" decoding="async" />
   </a>
   <figcaption>Monthly keyword coverage, ranking distribution and organic traffic trends.</figcaption>
@@ -103,7 +103,7 @@ Monthly charts show changes in keyword coverage, ranking distribution, and the r
 ### Campaign Costs and Conversions: GPL
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/ads-gpl.webp" target="_blank" rel="noopener" aria-label="Open the GPL campaign reporting screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/ads-gpl.webp" data-image-zoom aria-label="Open the GPL campaign reporting screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/ads-gpl.webp" alt="GPL campaign report with impressions, clicks, spend, conversions, phone interactions and cost-per-conversion charts" width="1732" height="1125" loading="lazy" decoding="async" />
   </a>
   <figcaption>GPL campaign costs, conversions and device comparisons.</figcaption>
@@ -114,7 +114,7 @@ This campaign view brings together impressions, clicks, spend, conversions, and 
 ### Campaign Costs and Conversions: Solar
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/ads-solar.webp" target="_blank" rel="noopener" aria-label="Open the Solar campaign reporting screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/ads-solar.webp" data-image-zoom aria-label="Open the Solar campaign reporting screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/ads-solar.webp" alt="Solar campaign report with headline KPIs, ad-group costs, conversion metrics, device comparisons and separate call and lead panels" width="1736" height="1124" loading="lazy" decoding="async" />
   </a>
   <figcaption>Solar campaigns reported with the same structure as GPL.</figcaption>
@@ -125,7 +125,7 @@ A dedicated view applies the same reporting structure to the Solar campaigns. It
 ### Geographic Campaign Analysis: North, East, and West
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/ads-geography-north-east-west.webp" target="_blank" rel="noopener" aria-label="Open the North, East and West campaign analysis screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/ads-geography-north-east-west.webp" data-image-zoom aria-label="Open the North, East and West campaign analysis screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/ads-geography-north-east-west.webp" alt="Regional campaign tables and maps for the North, East and West areas showing impressions, clicks and attributed conversions" width="1715" height="1035" loading="lazy" decoding="async" />
   </a>
   <figcaption>Territorial campaign results for the North, East and West.</figcaption>
@@ -136,7 +136,7 @@ Regional tables and maps break down impressions, clicks, and attributed conversi
 ### Geographic Campaign Analysis: South and Centre
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/ads-geography-south-centre.webp" target="_blank" rel="noopener" aria-label="Open the South and Centre campaign analysis screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/ads-geography-south-centre.webp" data-image-zoom aria-label="Open the South and Centre campaign analysis screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/ads-geography-south-centre.webp" alt="Regional campaign tables and maps for the South and Centre areas" width="1733" height="971" loading="lazy" decoding="async" />
   </a>
   <figcaption>Campaign activity for the South and Centre territories.</figcaption>
@@ -149,7 +149,7 @@ The South and Centre views extend the same geographic reporting framework. Ad-gr
 ### Contact Actions and Acquisition Channels
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/contact-actions-channels.webp" target="_blank" rel="noopener" aria-label="Open the contact actions screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/contact-actions-channels.webp" data-image-zoom aria-label="Open the contact actions screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/contact-actions-channels.webp" alt="Contact reporting separating newsletter sign-ups, reported phone interactions and generic forms, with channel breakdowns" width="1736" height="1099" loading="lazy" decoding="async" />
   </a>
   <figcaption>Newsletter sign-ups, phone interactions and form submissions kept distinct.</figcaption>
@@ -160,7 +160,7 @@ This section separates newsletter sign-ups, reported phone interactions, and gen
 ### Contact Requests by Customer Segment
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/contact-segments.webp" target="_blank" rel="noopener" aria-label="Open the contact requests by customer segment screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/contact-segments.webp" data-image-zoom aria-label="Open the contact requests by customer segment screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/contact-segments.webp" alt="Contact requests grouped into condominiums, business and home segments with totals, category comparisons and channel breakdowns" width="1729" height="1121" loading="lazy" decoding="async" />
   </a>
   <figcaption>Contact requests grouped by condominiums, business and home.</figcaption>
@@ -171,7 +171,7 @@ Contact requests are grouped into three commercial segments: condominiums, busin
 ### Geographic Lead Analysis
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/geographic-leads.webp" target="_blank" rel="noopener" aria-label="Open the geographic lead analysis screenshot at full size">
+  <a class="case-figure-link" href="/images/work/web-analytics-dashboard/geographic-leads.webp" data-image-zoom aria-label="Open the geographic lead analysis screenshot at full size">
     <img src="/images/work/web-analytics-dashboard/geographic-leads.webp" alt="Geographic contact analysis with source, region, city and website-section filters and stacked bars" width="1735" height="1102" loading="lazy" decoding="async" />
   </a>
   <figcaption>Geographic contact analysis by source, region and website section.</figcaption>

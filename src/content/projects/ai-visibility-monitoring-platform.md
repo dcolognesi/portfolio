@@ -93,7 +93,7 @@ The chart provides a quick visual overview. The tables preserve the detail neede
 The visual positioning score is an analytical feature of the product, not a measurement of real customer purchase intent or sales conversion.
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/ai-visibility/brand-visibility-index.webp" target="_blank" rel="noopener" aria-label="Open the brand visibility index screenshot at full size">
+  <a class="case-figure-link" href="/images/work/ai-visibility/brand-visibility-index.webp" data-image-zoom aria-label="Open the brand visibility index screenshot at full size">
     <img src="/images/work/ai-visibility/brand-visibility-index.webp" alt="Brand visibility index chart paired with a table of brand coverage and positioning scores" width="1800" height="826" loading="lazy" decoding="async" />
   </a>
   <figcaption>A visual competitive overview sits alongside a more detailed brand comparison.</figcaption>
@@ -112,7 +112,7 @@ Time-series charts add a historical perspective to the competitive views.
 They provide a place to review changes and investigate whether an apparent difference persists. They can also support analysis around content or communication initiatives, without implying that a change in the chart proves causation.
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/ai-visibility/visibility-trends.webp" target="_blank" rel="noopener" aria-label="Open the visibility trends screenshot at full size">
+  <a class="case-figure-link" href="/images/work/ai-visibility/visibility-trends.webp" data-image-zoom aria-label="Open the visibility trends screenshot at full size">
     <img src="/images/work/ai-visibility/visibility-trends.webp" alt="Two time-series charts showing share of model recommendations and domain coverage over time" width="1800" height="1258" loading="lazy" decoding="async" />
   </a>
   <figcaption>Trend views add a historical perspective to the competitive analysis.</figcaption>
@@ -137,7 +137,7 @@ The stability indicator adds another layer of interpretation: users should consi
 Together, these elements help the team investigate which customer questions need attention, rather than treating visibility as a brand-wide average.
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/ai-visibility/prompts.webp" target="_blank" rel="noopener" aria-label="Open the prompts page screenshot at full size">
+  <a class="case-figure-link" href="/images/work/ai-visibility/prompts.webp" data-image-zoom aria-label="Open the prompts page screenshot at full size">
     <img src="/images/work/ai-visibility/prompts.webp" alt="Prompt monitoring table with coverage, stability and per-engine results" width="1800" height="1208" loading="lazy" decoding="async" />
   </a>
   <figcaption>The prompt workspace connects individual customer questions with coverage, variability, and engine-level results.</figcaption>
@@ -156,7 +156,7 @@ Separating these perspectives makes the report more informative than a leaderboa
 The excerpt also creates a useful connection between measurement and language: users can see an example of how a brand was discussed, not just how often it appeared.
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/ai-visibility/brand-mentions.webp" target="_blank" rel="noopener" aria-label="Open the brand mentions screenshot at full size">
+  <a class="case-figure-link" href="/images/work/ai-visibility/brand-mentions.webp" data-image-zoom aria-label="Open the brand mentions screenshot at full size">
     <img src="/images/work/ai-visibility/brand-mentions.webp" alt="Brand mentions table with intensity, persistence, efficiency, total mentions, frequency, sentiment and citation columns" width="1800" height="964" loading="lazy" decoding="async" />
   </a>
   <figcaption>Brand-level reporting combines measures of presence with contextual excerpts.</figcaption>
@@ -175,7 +175,7 @@ This page gives content and SEO teams a practical starting point for examining w
 It can inform research into owned content and external publications without presenting citation frequency as proof of trust, endorsement, or a guaranteed route to improved visibility.
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/ai-visibility/citations.webp" target="_blank" rel="noopener" aria-label="Open the citations page screenshot at full size">
+  <a class="case-figure-link" href="/images/work/ai-visibility/citations.webp" data-image-zoom aria-label="Open the citations page screenshot at full size">
     <img src="/images/work/ai-visibility/citations.webp" alt="Citation analysis table listing source domains, citation share, citation counts, engine coverage and average position" width="1800" height="1083" loading="lazy" decoding="async" />
   </a>
   <figcaption>Source reporting makes cited domains, example pages, and engine differences easier to investigate.</figcaption>
@@ -200,14 +200,14 @@ The table presents each competitor’s name, website, type, creation date, and s
 Giving this configuration its own workspace makes the competitive context visible and manageable. Users can see who belongs in the monitoring scope rather than treating the benchmark as an unexplained part of the report.
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/ai-visibility/tags.webp" target="_blank" rel="noopener" aria-label="Open the project tags screenshot at full size">
+  <a class="case-figure-link" href="/images/work/ai-visibility/tags.webp" data-image-zoom aria-label="Open the project tags screenshot at full size">
     <img src="/images/work/ai-visibility/tags.webp" alt="Project tags page with a new tag field, search control and a table of tags and connected prompt counts" width="1800" height="623" loading="lazy" decoding="async" />
   </a>
   <figcaption>Dedicated configuration pages keep topic organization and competitor management separate from analysis.</figcaption>
 </figure>
 
 <figure class="case-figure">
-  <a class="case-figure-link" href="/images/work/ai-visibility/competitors.webp" target="_blank" rel="noopener" aria-label="Open the competitors screenshot at full size">
+  <a class="case-figure-link" href="/images/work/ai-visibility/competitors.webp" data-image-zoom aria-label="Open the competitors screenshot at full size">
     <img src="/images/work/ai-visibility/competitors.webp" alt="Competitor management table with brand names, websites, type, creation date and status" width="1800" height="739" loading="lazy" decoding="async" />
   </a>
   <figcaption>Competitor management makes the benchmark explicit and keeps it in one place.</figcaption>

@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
+import ImageZoom from 'astro-image-zoom/ImageZoom.astro';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import Breadcrumbs from '~/components/Breadcrumbs.astro';
 import Artwork from '~/components/art/Artwork.astro';
@@ -75,26 +76,30 @@ const jsonLd = graph([
     </section>
 
     <section class="wrap" style="padding-bottom:var(--sec)">
-      <div class:list={['case-media rev', hero?.fit === 'contain' && 'case-media-contain']}>
-        {
-          hero ? (
-            <img
-              src={hero.src}
-              alt={hero.alt}
-              width={hero.width}
-              height={hero.height}
-              fetchpriority="high"
-              decoding="async"
-            />
-          ) : d.artwork ? (
-            <Artwork name={d.artwork} label={`${d.title} — project artwork`} />
-          ) : null
-        }
-      </div>
+      <ImageZoom>
+        <div class:list={['case-media rev', hero?.fit === 'contain' && 'case-media-contain']}>
+          {
+            hero ? (
+              <img
+                src={hero.src}
+                alt={hero.alt}
+                width={hero.width}
+                height={hero.height}
+                fetchpriority="high"
+                decoding="async"
+              />
+            ) : d.artwork ? (
+              <Artwork name={d.artwork} label={`${d.title} — project artwork`} />
+            ) : null
+          }
+        </div>
+      </ImageZoom>
 
       <div class="case-grid">
         <div class="rev">
-          <div class="prose"><Content /></div>
+          <ImageZoom>
+            <div class="prose"><Content /></div>
+          </ImageZoom>
 
           {
             d.results.length > 0 && (

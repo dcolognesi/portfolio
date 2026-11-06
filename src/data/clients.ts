@@ -15,7 +15,6 @@ export const clients: Client[] = [
   { name: 'SPERLARI', shape: '<circle cx="12" cy="12" r="4"/><path d="M8 9 4 6l1 6-1 6 4-3M16 9l4-3-1 6 1 6-4-3"/>' },
   { name: 'ISEO', shape: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><circle cx="12" cy="16" r="1.5"/>' },
   { name: 'ITALO', shape: '<rect x="6" y="3" width="12" height="14" rx="3"/><path d="M6 11h12"/><path d="M8 21l2-4M16 21l-2-4"/>' },
-  { name: 'PINALLI', shape: '<path d="M4 18 12 4l8 14z"/>' },
   { name: 'UNIPOL MOVE', shape: '<path d="M4 8h12l4 4-4 4H4z"/>' },
   { name: 'IUBENDA', shape: '<path d="M12 4v16M8 20h8M4 8h16"/><path d="M6 8 4 13a2.5 2.5 0 0 0 5 0zM18 8l-2 5a2.5 2.5 0 0 0 5 0z"/>' },
   { name: 'INSURANCE TRADE', shape: '<path d="M4 12h16M12 4v16"/><circle cx="12" cy="12" r="7"/>' },
