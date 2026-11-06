@@ -353,15 +353,35 @@
   gap: clamp(30px, 4.4vw, 68px);
   align-items: start;
 }
-.contact-form { width: 100%; margin-top: 26px; }
-.form { display: grid; gap: 18px; }
-.field { display: grid; gap: 8px; }
+.contact-form {
+  width: 100%;
+  margin-top: 26px;
+  padding: clamp(22px, 3vw, 34px);
+  background: var(--swp-mist);
+  border: 1px solid var(--swp-line);
+  border-radius: var(--r-lg);
+  box-shadow: 0 30px 60px -52px rgba(16, 17, 16, 0.55);
+}
+.contact-form::before {
+  content: '';
+  display: block;
+  width: 46px;
+  height: 4px;
+  border-radius: var(--r-pill);
+  background: var(--swp-lime);
+}
+.form { display: grid; gap: 20px; }
+.field { display: grid; gap: 9px; }
 .field > label {
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--swp-slate);
+  transition: color 0.25s var(--ease);
 }
+.field:focus-within > label { color: var(--swp-ink); }
 .field .hint { font-size: 12.8px; color: var(--swp-slate); }
 .field input,
 .field select,
@@ -372,19 +392,25 @@
   background: var(--swp-shell);
   border: 1.5px solid var(--swp-line);
   border-radius: var(--r-sm);
-  padding: 13px 15px;
+  padding: 14px 16px;
   width: 100%;
-  transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease),
+    background 0.25s var(--ease);
 }
-.field textarea { min-height: 170px; resize: vertical; line-height: 1.6; }
+.field textarea { min-height: 180px; resize: vertical; line-height: 1.6; }
 .field input:hover,
 .field select:hover,
 .field textarea:hover { border-color: var(--swp-slate); }
 .field input:focus-visible,
 .field select:focus-visible,
-.field textarea:focus-visible { border-color: var(--swp-ink); outline-offset: 1px; }
+.field textarea:focus-visible {
+  border-color: var(--swp-ink);
+  box-shadow: 0 0 0 4px rgba(200, 241, 77, 0.35);
+  outline: none;
+}
 .field input::placeholder,
-.field textarea::placeholder { color: var(--swp-slate); }
+.field textarea::placeholder { color: var(--swp-slate); opacity: 0.75; }
+.contact-form .btn { justify-self: start; }
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .form-note {
@@ -408,8 +434,8 @@
 .form-status:not(:empty) { display: block; }
 .form-status.is-loading {
   color: var(--swp-slate);
-  background: var(--swp-mist);
-  border-left: 3px solid var(--swp-slate);
+  background: var(--swp-shell);
+  border-left: 3px solid var(--swp-lime-deep);
 }
 .form-status.is-success {
   color: var(--swp-ink);
