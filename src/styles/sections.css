@@ -1231,9 +1231,6 @@
   border-radius: var(--r-lg);
   padding: clamp(26px, 2.6vw, 36px);
 }
-.contact-page .faq-aside { background: var(--swp-lime); }
-.contact-page .faq-aside h2,
-.contact-page .faq-aside p { color: var(--swp-ink); }
 .faq-aside h2 { font-size: 23px; margin-bottom: 12px; letter-spacing: -0.026em; }
 .faq-aside p { font-size: 14.8px; color: var(--swp-slate); margin-bottom: 24px; }
 
