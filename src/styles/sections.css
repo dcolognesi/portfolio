@@ -1247,10 +1247,14 @@
   margin-inline: auto;
   padding-inline: clamp(20px, 3.2vw, 56px);
 }
-.contact-page .faq-narrow.sec-top::before {
-  left: clamp(20px, 3.2vw, 56px);
-  right: clamp(20px, 3.2vw, 56px);
+/* Match the homepage FAQ panel: sand surface, rounded corners and
+   breathing room around the section. */
+.contact-page .faq-narrow {
+  margin-block: clamp(16px, 2.2vw, 30px);
+  background: var(--surface-sand);
+  border-radius: var(--r-lg);
 }
+.contact-page .faq-narrow.sec-top::before { display: none; }
 
 /* ============================================================
    15. CTA
