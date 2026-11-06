@@ -12,7 +12,7 @@
 .contact-page .phero {
   position: relative;
   padding-top: clamp(76px, 8vw, 104px);
-  padding-bottom: clamp(16px, 2vw, 28px);
+  padding-bottom: clamp(4px, 1vw, 12px);
 }
 .contact-page .phero .eyebrow {
   position: absolute;
