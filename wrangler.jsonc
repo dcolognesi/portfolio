@@ -3,6 +3,11 @@
   "name": "swp-freelancer-portfolio",
   "compatibility_date": "2026-11-01",
   "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "CONTACT_TO_EMAIL": "dario.colognesi@gmail.com"
+    // RESEND_API_KEY e CONTACT_FROM_EMAIL vanno aggiunti come secret,
+    // non come vars in chiaro.
+  },
   "observability": {
     "enabled": true
   }
