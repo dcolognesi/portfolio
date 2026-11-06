@@ -353,7 +353,7 @@
   gap: clamp(30px, 4.4vw, 68px);
   align-items: start;
 }
-.contact-form { max-width: 720px; margin-top: 26px; }
+.contact-form { width: 100%; margin-top: 26px; }
 .form { display: grid; gap: 18px; }
 .field { display: grid; gap: 8px; }
 .field > label {
