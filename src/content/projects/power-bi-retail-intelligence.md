@@ -12,10 +12,10 @@ image:
   height: 736
   fit: contain
 hero:
-  src: /images/work/power-bi-retail/sessions-cost-cps.webp
-  alt: Power BI report showing sessions, advertising cost and CPS trends over time
-  width: 2458
-  height: 1128
+  src: /images/work/power-bi-retail/hero.webp
+  alt: Power BI retail intelligence hero graphic with dashboard visuals
+  width: 640
+  height: 316
   fit: contain
 services: ['Business intelligence', 'Data modeling', 'Marketing attribution', 'Dashboard design']
 technologies: ['Power BI', 'Microsoft Fabric', 'Google BigQuery', 'Funnel.io', 'DAX']
