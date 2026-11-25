@@ -21,7 +21,7 @@ results:
     label: Components documented at handover
 featured: false
 order: 1
-draft: false
+draft: true
 ---
 
 ## The problem nobody had written down

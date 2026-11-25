@@ -17,6 +17,7 @@ results:
     label: Modelling and automation
 featured: false
 order: 2
+draft: true
 ---
 
 ## Demo notice
