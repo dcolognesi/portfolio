@@ -17,6 +17,7 @@ hero:
   width: 640
   height: 316
   fit: contain
+  position: left center
 services: ['Business intelligence', 'Data modeling', 'Marketing attribution', 'Dashboard design']
 technologies: ['Power BI', 'Microsoft Fabric', 'Google BigQuery', 'Funnel.io', 'DAX']
 featured: true
