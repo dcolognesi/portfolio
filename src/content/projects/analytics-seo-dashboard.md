@@ -15,7 +15,7 @@ results:
     label: Reference pipeline
   - value: 'SQL + Python'
     label: Modelling and automation
-featured: true
+featured: false
 order: 2
 ---
 

@@ -19,8 +19,8 @@ hero:
   fit: contain
 services: ['Business intelligence', 'Data modeling', 'Marketing attribution', 'Dashboard design']
 technologies: ['Power BI', 'Microsoft Fabric', 'Google BigQuery', 'Funnel.io', 'DAX']
-featured: false
-order: 3
+featured: true
+order: 2
 draft: false
 ---
 
