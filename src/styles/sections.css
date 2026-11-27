@@ -265,9 +265,7 @@
   width: 100%;
   padding-inline: 1px;
   text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  overflow-wrap: break-word;
+  white-space: nowrap;
 }
 .hero-proof { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 
