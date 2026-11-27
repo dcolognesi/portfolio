@@ -1550,6 +1550,8 @@
 @media (max-width: 700px) {
   .cv-toggle { font-size: 16px; }
   .cv-body { padding: 20px 0; }
+  /* Absolute eyebrow tab overlaps the title on mobile — lower it clear. */
+  #cv-h { margin-top: 32px; }
 }
 
 /* ============================================================
