@@ -381,8 +381,14 @@
   font-size: 15.5px;
   color: var(--swp-slate);
   line-height: 1.72;
-  max-width: 46ch;
+  width: 100%;
+  max-width: none;
+  padding-inline: 1px;
   margin-bottom: 30px;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .collab-panel {
