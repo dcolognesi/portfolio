@@ -138,6 +138,12 @@
   font-size: clamp(40px, 5.6vw, 76px);
   line-height: 0.95;
   letter-spacing: -0.04em;
+  width: 100%;
+  padding-inline: 1px;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
 }
 .hero-name em { font-style: normal; display: block; }
 .hero-actions {
@@ -148,11 +154,17 @@
   margin-top: 26px;
 }
 .hero-copy {
-  max-width: 40ch;
+  width: 100%;
+  max-width: none;
+  padding-inline: 1px;
   font-size: 15.5px;
   line-height: 1.7;
   color: var(--swp-slate);
   margin-bottom: 32px;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .hero-card {
@@ -235,8 +247,28 @@
   border-left: 1.5px solid var(--swp-line);
   padding-left: clamp(18px, 1.7vw, 26px);
 }
-.hero-role { font-size: 15px; color: var(--swp-slate); line-height: 1.5; margin-bottom: 14px; }
-.hero-title2 { margin-bottom: 30px; font-size: clamp(28px, 3.4vw, 46px); }
+.hero-role {
+  font-size: 15px;
+  color: var(--swp-slate);
+  line-height: 1.5;
+  margin-bottom: 14px;
+  width: 100%;
+  padding-inline: 1px;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
+}
+.hero-title2 {
+  margin-bottom: 30px;
+  font-size: clamp(28px, 3.4vw, 46px);
+  width: 100%;
+  padding-inline: 1px;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
+}
 .hero-proof { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 
 .stack { display: flex; }
@@ -274,7 +306,16 @@
   letter-spacing: 0;
   margin-left: 6px;
 }
-.hero-note { font-size: 14px; font-weight: 600; }
+.hero-note {
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+  padding-inline: 1px;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
+}
 
 .hero-mark {
   position: absolute;
